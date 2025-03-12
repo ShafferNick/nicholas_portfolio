@@ -1,7 +1,7 @@
 import { client } from '@/app/sanityClient';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faAward } from '@fortawesome/free-solid-svg-icons'; // Changed to solid icons
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Links from './components/Links';
 
 // Define types for your Sanity data
 type Job = {
@@ -60,89 +60,76 @@ async function getData() {
 export default async function Home() {
   const { profile, jobs, education, entrepreneurship, skills, links } = await getData();
 
-  return (
-    <main className="max-w-4xl mx-auto p-4">
-      {/* Profile */}
-      <section className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Nicholas Shaffer</h1>
-        <p className="text-gray-700">{profile.summary}</p>
-      </section>
-
-      {/* Links */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Links</h2>
-        <div className="flex gap-4">
-          {links.map(link => (
-            <a
-              key={link._id}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800"
-              title={link.title}
-            >
-              <FontAwesomeIcon icon={link.icon === 'linkedin' ? faLinkedin : faAward} size="2x" />
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Jobs */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Work Experience</h2>
-        {jobs.map(job => (
-          <div key={job._id} className="mb-4">
-            <h3 className="text-xl font-medium">{job.title}</h3>
-            <p className="text-gray-600">
-              {job.dates.startDate} - {job.dates.endDate || 'Present'} | {job.location}
-            </p>
-            <p className="text-gray-700">{job.description}</p>
+return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="bg-gray-800 py-20 text-center animate-slide-in">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nicholas Shaffer</h1>
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-2xl mb-4">Professional Summary</h3>
+            <p className="text-lg md:text-xl">{profile.summary}</p>
           </div>
-        ))}
-      </section>
-
-      {/* Education */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Education</h2>
-        {education.map(edu => (
-          <div key={edu._id} className="mb-4">
-            <h3 className="text-xl font-medium">{edu.institution} - {edu.major}</h3>
-            <p className="text-gray-600">
-              {edu.dates.startDate} - {edu.dates.endDate || 'Present'} | GPA: {edu.gpa || 'N/A'}
-            </p>
-            <ul className="list-disc pl-5 text-gray-700">
-              {edu.activities.map((activity, idx) => (
-                <li key={idx}>{activity}</li>
-              ))}
-            </ul>
+          <a href="/contact" className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full animate-slide-in">
+            Contact Me <span className="ml-2">✈️</span>
+          </a>
+          <div className="mt-10">
+            <div className="w-64 h-64 bg-gray-700 mx-auto rounded-full overflow-hidden animate-slide-in">
+              {/* Placeholder for image */}
+            </div>
           </div>
-        ))}
-      </section>
+        </section>
 
-      {/* Entrepreneurship */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Entrepreneurship</h2>
-        {entrepreneurship.map(venture => (
-          <div key={venture._id} className="mb-4">
-            <h3 className="text-xl font-medium">{venture.ventureName}</h3>
-            <p className="text-gray-600">
-              {venture.dates.startDate} - {venture.dates.endDate || 'Present'}
-            </p>
-            <p className="text-gray-700">{venture.description}</p>
+        {/* Professional History */}
+        <section className="py-16 bg-gray-700 animate-slide-in">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Professional History</h2>
+            {jobs.map(job => (
+              <div key={job._id} className="mb-6">
+                <h3 className="text-xl md:text-2xl font-medium">{job.title}</h3>
+                <p className="text-gray-300">
+                  {job.dates.startDate} - {job.dates.endDate || 'Present'} | {job.location}
+                </p>
+                <p className="text-gray-400">{job.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
       </section>
+      
+            {/* Links (Social Links) */}
+        <section className="py-16 bg-gray-800 animate-slide-in">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Professional Links</h2>
+            <Links links={links} />
+          </div>
+        </section>
 
-      {/* Skills */}
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-        {skills.map(skill => (
-          <div key={skill._id} className="mb-4">
-            <h3 className="text-xl font-medium">{skill.category}</h3>
-            <p className="text-gray-700">{skill.description}</p>
+        {/* Projects Section */}
+        <section className="py-16 bg-gray-700 animate-slide-in">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Placeholder for future projects */}
+              <div className="bg-gray-600 p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-medium">Project 1</h3>
+                <p className="text-gray-400 mt-2">Coming Soon</p>
+              </div>
+              <div className="bg-gray-600 p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-medium">Project 2</h3>
+                <p className="text-gray-400 mt-2">Coming Soon</p>
+              </div>
+              <div className="bg-gray-600 p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-medium">Project 3</h3>
+                <p className="text-gray-400 mt-2">Coming Soon</p>
+              </div>
+            </div>
           </div>
-        ))}
-      </section>
-    </main>
+        </section>
+
+        <Footer />
+      </main>
+    </div>
   );
 }
+    

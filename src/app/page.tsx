@@ -1,6 +1,7 @@
 import { client } from '@/app/sanityClient';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faCertificate } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faAward } from '@fortawesome/free-solid-svg-icons'; // Changed to solid icons
 
 // Define types for your Sanity data
 type Job = {
@@ -77,9 +78,10 @@ export default async function Home() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:text-blue-800"
+              title={link.title}
             >
-              {link.title} {/* Replace with icon in Step 4 */}
+              <FontAwesomeIcon icon={link.icon === 'linkedin' ? faLinkedin : faAward} size="2x" />
             </a>
           ))}
         </div>

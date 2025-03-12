@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   return (
@@ -7,13 +8,19 @@ export default function Footer() {
         <p className="mb-2">© 2025 Nicholas Shaffer</p>
         <div className="flex justify-center gap-4">
           <a href="https://www.linkedin.com/in/nicholas-shaffer-a22042206/" target="_blank" rel="noopener noreferrer">
-            <span>LinkedIn</span> {/* Placeholder, replace with icon if needed */}
+            <FontAwesomeIcon icon={faLinkedin} size="lg" className="hover:text-gray-300" />
           </a>
           <a href="https://github.com/ShafferNick" target="_blank" rel="noopener noreferrer">
-            <span>GitHub</span>
+            <FontAwesomeIcon icon={faGithub} size="lg" className="hover:text-gray-300" />
           </a>
           <a href="https://www.credly.com/users/nickshaffer" target="_blank" rel="noopener noreferrer">
-            <span>Credly</span>
+            <img
+              src="https://cdn.player.fm/images/21281221/series/SyPIfO73CwJqTAo6/512.png"
+              alt="Credly"
+              width={24}
+              height={24}
+              className="hover:opacity-80"
+            />
           </a>
         </div>
       </div>

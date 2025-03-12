@@ -1,9 +1,20 @@
-import './globals.css';
-import './fontawesome';
+import type { Metadata } from "next";
+import { GeistSans, GeistMono } from "next/font/google"; // Corrected import names
+import "./globals.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
-import type { Metadata } from 'next';
+
+// Configure fonts
+const geistSans = GeistSans({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = GeistMono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Nicholas Shaffer Portfolio",
@@ -17,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen" suppressHydrationWarning>
+      <body className="flex flex-col min-h-screen">
         {/* Navbar */}
         <nav className="bg-gray-800 text-white p-4 sticky top-0 z-10">
           <div className="max-w-4xl mx-auto flex justify-between items-center">
@@ -37,7 +48,7 @@ export default function RootLayout({
         </nav>
 
         {/* Main Content */}
-        <main className="flex-grow max-w-4xl mx-auto p-4">
+        <main className={`${geistSans.variable} ${geistMono.variable} flex-grow max-w-4xl mx-auto p-4 antialiased`}>
           {children}
         </main>
 

@@ -2,7 +2,6 @@ import { client } from '@/app/sanityClient';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Links from './components/Links';
-import { PaperAirplaneIcon } from '@heroicons/react/24/solid';
 
 type Job = {
   _id: string;
@@ -35,22 +34,22 @@ export default async function Home() {
   const { profile, jobs, links } = await getData();
 
   return (
-    <div className="min-h-screen flex flex-col mx-4">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section - Custom Black Background */}
-        <section className="hero-custom-black py-16 md:py-24 text-left animate-slide-in">
+        {/* Hero Section - Black Background */}
+        <section className="bg-black py-16 md:py-24 text-left animate-slide-in">
           <div className="max-w-4xl mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-regular mb-4" style={{ fontWeight: 200 }}>Nicholas Shaffer</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Nicholas Shaffer</h1>
             <div className="max-w-2xl">
-              <h3 className="text-sm md:text-base font-extralight mb-2" style={{ fontWeight: 200 }}>Professional Summary</h3>
+              <h3 className="text-sm md:text-base font-semibold mb-2">Professional Summary</h3>
               <p className="text-sm md:text-base leading-relaxed">{profile.summary}</p>
             </div>
             <a
               href="/contact"
               className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm md:text-base font-semibold transition-colors animate-slide-in float-right"
             >
-              Contact Me <PaperAirplaneIcon className="inline-block w-4 h-4 ml-2" />
+              Contact Me <span className="ml-2">✈️</span>
             </a>
             <div className="mt-8 clear-both">
               <div className="w-48 h-48 md:w-64 md:h-64 bg-gray-400 mx-auto md:mx-0 rounded-full overflow-hidden animate-slide-in">
@@ -121,3 +120,4 @@ export default async function Home() {
     </div>
   );
 }
+    

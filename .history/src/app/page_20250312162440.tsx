@@ -39,10 +39,10 @@ export default async function Home() {
         {/* Hero Section - Custom Black Background */}
         <section className="hero-custom-black py-16 md:py-24 text-left animate-slide-in">
           <div className="max-w-4xl mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-extralight mb-4" style={{ fontWeight: 700 }}>Nicholas Shaffer</h1>
+            <h1 className="text-4xl md:text-6xl font-extralight mb-4" style={{ fontWeight: 200 }}>Nicholas Shaffer</h1>
             <div className="max-w-2xl">
-              <h3 className="text-2xl md:text-base font-regular mb-2" style={{ fontWeight: 500 }}>Professional Summary</h3>
-              <p className="text-sm md:text-base font-extralight mb-4">{profile.summary}</p>
+              <h3 className="text-sm md:text-base font-extralight mb-2" style={{ fontWeight: 200 }}>Professional Summary</h3>
+              <p className="text-sm md:text-base leading-relaxed">{profile.summary}</p>
             </div>
             <a
               href="/contact"

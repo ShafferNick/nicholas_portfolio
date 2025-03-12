@@ -1,4 +1,5 @@
 import './globals.css';
+import './fontawesome';
 import type { Metadata } from 'next';
 import NavbarClient from './components/NavbarClient';
 import FooterClient from './components/FooterClient';

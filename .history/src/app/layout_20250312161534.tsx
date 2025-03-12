@@ -1,7 +1,8 @@
 import './globals.css';
+import './fontawesome';
 import type { Metadata } from 'next';
 import NavbarClient from './components/NavbarClient';
-import FooterClient from './components/FooterClient';
+import FooterClient from './components/FooterClient'; // Import the new footer component
 
 export const metadata: Metadata = {
   title: "Nicholas Shaffer Portfolio",
@@ -21,7 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
 
         {/* Footer */}
-        <FooterClient />
+        <FooterClient /> {/* Use the client component here */}
       </body>
     </html>
   );

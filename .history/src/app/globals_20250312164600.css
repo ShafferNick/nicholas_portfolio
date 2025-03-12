@@ -8,8 +8,8 @@ body {
   font-family: 'Exo', sans-serif;
   background: linear-gradient(180deg, #0D1B2A 0%, #1A2A44 100%);
   color: #FFFFFF;
-  margin: 0;
-  padding: 0;
+  margin: 5%;
+  padding: 10%;
 }
 
 a {

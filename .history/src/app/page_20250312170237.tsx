@@ -44,7 +44,7 @@ export default async function Home() {
               <h3 className="text-sm md:text-base font-bold mb-2" style={{ fontWeight: 700 }}>Professional Summary</h3>
               <p className="text-sm md:text-base leading-relaxed font-extralight" style={{ fontWeight: 200 }}>{profile.summary}</p>
             </div>
-            <div className="flex items-center justify-between gap-8 mt-6">
+            <div className="flex items-center gap-4 mt-6">
               <div className="w-[65%] max-w-[65%] h-20 bg-gray-400 rounded overflow-hidden animate-slide-in">
                 <Image
                   src="https://static.vecteezy.com/system/resources/previews/000/694/587/original/elegant-technology-banner-background-vector.jpg"

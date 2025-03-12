@@ -44,22 +44,22 @@ export default async function Home() {
               <h3 className="text-sm md:text-base font-bold mb-2" style={{ fontWeight: 700 }}>Professional Summary</h3>
               <p className="text-sm md:text-base leading-relaxed font-extralight" style={{ fontWeight: 200 }}>{profile.summary}</p>
             </div>
-            <div className="flex items-center justify-between gap-8 mt-6">
-              <div className="w-[65%] max-w-[65%] h-20 bg-gray-400 rounded overflow-hidden animate-slide-in">
+            <a
+              href="/contact"
+              className="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm md:text-base font-semibold transition-colors animate-slide-in float-right"
+            >
+              Contact Me <PaperAirplaneIcon className="inline-block w-2 h-2 ml-2" />
+            </a>
+            <div className="mt-8 clear-both">
+              <div className="w-48 h-48 md:w-64 md:h-64 bg-gray-400 mx-auto md:mx-0 rounded-full overflow-hidden animate-slide-in">
                 <Image
-                  src="https://static.vecteezy.com/system/resources/previews/000/694/587/original/elegant-technology-banner-background-vector.jpg"
-                  alt="Banner"
+                  src="https://via.placeholder.com/256"
+                  alt="Placeholder"
                   width={256}
-                  height={80}
+                  height={256}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <a
-                href="/contact"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-sm md:text-base font-semibold transition-colors animate-slide-in"
-              >
-                Contact Me <PaperAirplaneIcon className="inline-block w-2 h-2 ml-2" />
-              </a>
             </div>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default async function Home() {
                 <h3 className="text-xl font-medium">Project 1</h3>
                 <p className="text-gray-600 mt-2">Coming Soon</p>
               </div>
-              <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="bg-gray-200 p-4 rounded-lg shadow-lg animate-slide-in">
                 <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
                 <h3 className="text-xl font-medium">Project 2</h3>
                 <p className="text-gray-600 mt-2">Coming Soon</p>

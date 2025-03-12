@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
       'images.credly.com',            // For Prosci Change Manager image in Links.tsx
       'cdn.player.fm',                // For Credly image in Links.tsx
       'static-00.iconduck.com',       // For GitHub image in Links.tsx
-      'static.vecteezy.com',                 // For banner image in Hero Section page.tsx
+      'https://static.vecteezy.com/',                 // For banner image in Hero Section page.tsx
     ],
   },
 };

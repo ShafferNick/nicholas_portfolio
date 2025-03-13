@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,20 @@
 
 body {
   font-family: 'Exo', sans-serif;
-  background: #1A1A1A;
+  background: linear-gradient(180deg, #0D1B2A 0%, #1A2A44 100%);
   color: #FFFFFF;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-}
-
-h1 {
-  font-weight: 700;
-}
-
-h2 {
-  font-weight: 550;
-}
-
-h3 {
-  font-weight: 400;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  font-family: 'Exo';
 }
 
 .hero-custom-black {
   background-color: #1A1A1A;
+  /* Custom darker black for hero */
 }
 
 .animate-slide-in {

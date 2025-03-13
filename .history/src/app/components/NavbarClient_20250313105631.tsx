@@ -8,13 +8,15 @@ export default function NavbarClient() {
   return (
     <nav className="bg-transparent text-white p-4 sticky top-0 z-10">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6">
-        <div className="hidden md:flex justify-between w-full space-x-12">
+        {/* Desktop Menu Items */}
+        <div className="hidden md:flex space-x-12 debug-desktop">
           <Link href="/" className="hover:text-gray-300 transition-colors">Home</Link>
           <Link href="/about" className="hover:text-gray-300 transition-colors">About Me</Link>
           <Link href="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
         </div>
+        {/* Hamburger Menu Button (Visible on Mobile) */}
         <button
-          className="md:hidden text-white focus:outline-none p-2 rounded"
+          className="md:hidden text-white focus:outline-none p-2 rounded ml-auto debug-mobile"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -32,8 +34,9 @@ export default function NavbarClient() {
             />
           </svg>
         </button>
+        {/* Mobile Menu (Visible when Hamburger is Clicked) */}
         {isOpen && (
-          <div className="md:hidden flex flex-col items-center justify-center space-y-4 bg-gray-800 p-4 rounded-b-lg absolute right-0 w-48">
+          <div className="md:hidden flex flex-col items-center space-y-4 bg-gray-800 p-4 rounded-b-lg absolute right-6 top-14 w-48">
             <Link href="/" className="hover:text-gray-300 transition-colors block w-full text-center" onClick={() => setIsOpen(false)}>Home</Link>
             <Link href="/about" className="hover:text-gray-300 transition-colors block w-full text-center" onClick={() => setIsOpen(false)}>About Me</Link>
             <Link href="/contact" className="hover:text-gray-300 transition-colors block w-full text-center" onClick={() => setIsOpen(false)}>Contact</Link>

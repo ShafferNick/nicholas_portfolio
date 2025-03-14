@@ -1,8 +1,7 @@
 import { client } from '@/app/sanityClient';
+import Links from './components/Links';
 import Image from 'next/image';
-import HeroSection from './components/Hero'; // Import new component
-import BadgeSocialLinks from './components/BadgeSocialLinks'; // Import new component
-import ProfessionalHistory from './components/ProfessionalHistory';
+import ProfessionalHistory from './components/ProfessionalHistory'; // Import the new component
 
 type Job = {
   _id: string;
@@ -36,14 +35,44 @@ export default async function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection summary={profile.summary} />
+      {/* Hero Section - Custom Black Background */}
+      <section className="hero-custom-black py-20 md:py-28 text-left animate-slide-in">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-extralight mb-6" style={{ fontWeight: 200 }}>
+            Nicholas Shaffer
+          </h1>
+          <div className="max-w-2xl mb-8">
+            <h3 className="text-lg md:text-xl font-bold mb-4" style={{ fontWeight: 700 }}>
+              Professional Summary
+            </h3>
+            <p className="text-base md:text-lg leading-relaxed font-extralight" style={{ fontWeight: 200 }}>
+              {profile.summary}
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Badge & Social Links Section */}
-      <BadgeSocialLinks links={links} />
+      <section className="badge-social-section">
+        <Links links={links} />
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact-section">
+        <div className="contact-me">
+          <span>Contact Me</span>
+          <Image
+            src="/paper-plane-svgrepo-com.svg"
+            alt="Contact Icon"
+            width={24}
+            height={24}
+            className="contact-icon"
+          />
+        </div>
+      </section>
 
       {/* Professional History Section */}
-      <ProfessionalHistory jobs={jobs} />
+      <ProfessionalHistory jobs={jobs} /> {/* Use the new component */}
 
       {/* Projects Section - Light Gray Background */}
       <section className="py-16 bg-[#EFF0F3] text-black animate-slide-in">

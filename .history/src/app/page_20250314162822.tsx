@@ -1,6 +1,6 @@
 import { client } from '@/app/sanityClient';
 import Image from 'next/image';
-import HeroSection from './components/Hero'; // Import new component
+import HeroSection from './components/HeroSection'; // Import new component
 import BadgeSocialLinks from './components/BadgeSocialLinks'; // Import new component
 import ProfessionalHistory from './components/ProfessionalHistory';
 

@@ -44,7 +44,7 @@ export default function Links({ links }: { links: Link[] }) {
               <Image
                 src="https://images.credly.com/images/8a442ad3-10d8-46e4-9241-41b68cfb50a9/linkedin_thumb_VILT_Change_Practitioner_Certification_V2.png"
                 alt="Prosci Change Practitioner"
-                width={60}
+                width={35}
                 height={35}
               />
             ) : link.icon === 'credly' ? (

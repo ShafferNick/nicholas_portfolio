@@ -1,8 +1,6 @@
 import { client } from '@/app/sanityClient';
+import Links from './components/Links';
 import Image from 'next/image';
-import HeroSection from './components/Hero'; // Import new component
-import BadgeSocialLinks from './components/BadgeSocialLinks'; // Import new component
-import ProfessionalHistory from './components/ProfessionalHistory';
 
 type Job = {
   _id: string;
@@ -36,14 +34,48 @@ export default async function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection summary={profile.summary} />
+      {/* Hero Section - Custom Black Background */}
+      <section className="hero-custom-black py-20 md:py-28 text-left animate-slide-in">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-extralight mb-6" style={{ fontWeight: 200 }}>
+            Nicholas Shaffer
+          </h1>
+          <div className="max-w-2xl mb-8">
+            <h3 className="text-lg md:text-xl font-bold mb-4" style={{ fontWeight: 700 }}>
+              Professional Summary
+            </h3>
+            <p className="text-base md:text-lg leading-relaxed font-extralight" style={{ fontWeight: 200 }}>
+              {profile.summary}
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Badge & Social Links Section */}
-      <BadgeSocialLinks links={links} />
+      <section className="badge-social-section">
+        <Links links={links} />
+      </section>
 
-      {/* Professional History Section */}
-      <ProfessionalHistory jobs={jobs} />
+      {/* Professional History - Light Gray Background */}
+      <section className="py-16 bg-[#EFF0F3] animate-slide-in">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-left text-black">Professional History</h2>
+          {jobs.map((job, index) => (
+            <div key={job._id} className="mb-8 flex flex-col md:flex-row items-center gap-6 animate-slide-in">
+              <div className="w-full md:w-1/2">
+                <h3 className="text-xl md:text-2xl font-medium mb-2 text-black">{job.title}</h3>
+                <p className="text-black mb-2">
+                  {job.dates.startDate} - {job.dates.endDate || 'Present'} | {job.location}
+                </p>
+                <p className="text-black">{job.description}</p>
+              </div>
+              <div className="w-full md:w-1/2 h-48 bg-gray-300 rounded-lg">
+                {/* Placeholder for job-specific image */}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Projects Section - Light Gray Background */}
       <section className="py-16 bg-[#EFF0F3] text-black animate-slide-in">

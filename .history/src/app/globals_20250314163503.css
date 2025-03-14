@@ -8,8 +8,8 @@ body {
   font-family: 'Exo', sans-serif;
   background: #1A1A1A;
   color: #FFFFFF;
-  margin: 0;
-  padding: 0;
+  margin: 1rm;
+  padding: 1rm;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -72,8 +72,8 @@ a {
 
   .nav-link:hover {
     color: #d1d5db;
-    text-decoration: underline #4781EE;
-    text-decoration-thickness: 5px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -88,6 +88,7 @@ a {
     position: fixed !important;
     top: 1rem !important;
     right: clamp(2rem, 5vw, 3rem) !important;
+    /* Increased margin from the edge */
     z-index: 1000 !important;
     padding: 0.5rem !important;
   }
@@ -125,6 +126,7 @@ a {
     position: absolute !important;
     top: 1rem !important;
     right: clamp(2rem, 5vw, 3rem) !important;
+    /* Match hamburger icon */
     z-index: 1001 !important;
   }
 
@@ -151,48 +153,32 @@ a {
   }
 }
 
-/* Professional History Section */
-.professional-history-section {
-  color: #000000 !important;
-  width: 100% !important;
-  /* Ensure full width */
-  margin: 0 !important;
-  /* Remove any inherited margins */
-  padding: 0 !important;
-  /* Remove any inherited padding */
-}
-
-.professional-history-section * {
-  color: #000000 !important;
-}
-
 /* Badge & Social Links Section */
 .badge-social-section {
   margin: 0 !important;
   padding: 0 !important;
-  margin-bottom: 2rem !important;
 }
 
 .badge-social-header {
   text-align: left;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
 }
 
-.badge-social-section section {
-  margin-bottom: 0 !important;
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.badge-social-section .flex {
-  justify-content: space-around !important;
-  gap: 1rem !important;
+.social-link-img {
+  width: 40px;
+  height: 40px;
 }
 
 /* Contact Me Section */
 .contact-section {
   margin: 0 !important;
   padding: 0 !important;
-  margin-bottom: 2rem !important;
 }
 
 .contact-me {
@@ -204,12 +190,4 @@ a {
 .contact-icon {
   width: 24px;
   height: 24px;
-  transition: transform 0.3s ease-in-out;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  border-radius: 5px;
-  padding: 2px;
-}
-
-.contact-icon:hover {
-  transform: scale(1.2);
 }

@@ -15,9 +15,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Navbar */}
         <NavbarClient />
 
-        {/* Main Content - Full width */}
+        {/* Main Content */}
         <main className="flex-grow">
-          {children}
+          <div className="max-w-4xl mx-auto px-8 md:px-12" style={{ padding: '1.5rem 3rem' }}>
+            {children}
+          </div>
         </main>
 
         {/* Footer */}

@@ -72,8 +72,9 @@ a {
 
   .nav-link:hover {
     color: #d1d5db;
-    text-decoration: underline #4781EE;
-    text-decoration-thickness: 5px;
+    text-decoration: underline;
+    text-decoration-color: ;
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -154,16 +155,12 @@ a {
 /* Professional History Section */
 .professional-history-section {
   color: #000000 !important;
-  width: 100% !important;
-  /* Ensure full width */
-  margin: 0 !important;
-  /* Remove any inherited margins */
-  padding: 0 !important;
-  /* Remove any inherited padding */
+  /* Override global text color */
 }
 
 .professional-history-section * {
   color: #000000 !important;
+  /* Ensure all nested elements are black */
 }
 
 /* Badge & Social Links Section */

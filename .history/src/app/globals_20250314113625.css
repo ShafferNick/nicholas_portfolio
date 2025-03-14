@@ -87,8 +87,8 @@ a {
     display: block !important;
     position: fixed !important;
     top: 1rem !important;
-    right: clamp(2rem, 5vw, 3rem) !important;
-    /* Increased margin from the edge */
+    right: clamp(0.5rem, 2vw, 1.5rem) !important;
+    /* Responsive right positioning */
     z-index: 1000 !important;
     padding: 0.5rem !important;
   }
@@ -125,7 +125,7 @@ a {
   .mobile-menu .close-button {
     position: absolute !important;
     top: 1rem !important;
-    right: clamp(2rem, 5vw, 3rem) !important;
+    right: clamp(0.5rem, 2vw, 1.5rem) !important;
     /* Match hamburger icon */
     z-index: 1001 !important;
   }
@@ -155,8 +155,8 @@ a {
 
 /* Badge & Social Links Section */
 .badge-social-section {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .badge-social-header {
@@ -166,8 +166,8 @@ a {
 .social-links {
   display: flex;
   justify-content: space-between;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .social-link-img {
@@ -177,8 +177,8 @@ a {
 
 /* Contact Me Section */
 .contact-section {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .contact-me {

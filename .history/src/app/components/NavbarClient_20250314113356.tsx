@@ -44,7 +44,7 @@ export default function NavbarClient() {
           >
             {/* Close Button */}
             <button
-              className="close-button text-white text-3xl font-extrabold"
+              className="absolute top-4 right-4 text-white text-3xl font-extrabold"
               onClick={() => setIsOpen(false)}
             >
               ✕

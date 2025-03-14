@@ -87,8 +87,7 @@ a {
     display: block !important;
     position: fixed !important;
     top: 1rem !important;
-    right: clamp(2rem, 5vw, 3rem) !important;
-    /* Increased margin from the edge */
+    right: 0.5rem !important;
     z-index: 1000 !important;
     padding: 0.5rem !important;
   }
@@ -110,8 +109,9 @@ a {
     top: 0 !important;
     right: 0 !important;
     width: 50vw !important;
+    /* Take up half the screen */
     height: 100vh !important;
-    background-color: #000000 !important;
+    background-color: #d1d5db !important;
     padding: 1rem !important;
     transform: translateX(100%) !important;
     z-index: 50 !important;
@@ -121,18 +121,9 @@ a {
     transform: translateX(0) !important;
   }
 
-  /* Style the close button */
-  .mobile-menu .close-button {
-    position: absolute !important;
-    top: 1rem !important;
-    right: clamp(2rem, 5vw, 3rem) !important;
-    /* Match hamburger icon */
-    z-index: 1001 !important;
-  }
-
   /* Style the mobile menu links */
   .mobile-menu a {
-    color: #ffffff !important;
+    color: #000000 !important;
     font-size: 1.25rem !important;
     padding: 1rem 0 !important;
     width: 100% !important;
@@ -155,8 +146,8 @@ a {
 
 /* Badge & Social Links Section */
 .badge-social-section {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .badge-social-header {
@@ -166,8 +157,8 @@ a {
 .social-links {
   display: flex;
   justify-content: space-between;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .social-link-img {
@@ -177,8 +168,8 @@ a {
 
 /* Contact Me Section */
 .contact-section {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .contact-me {

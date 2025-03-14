@@ -87,8 +87,7 @@ a {
     display: block !important;
     position: fixed !important;
     top: 1rem !important;
-    right: clamp(2rem, 5vw, 3rem) !important;
-    /* Increased margin from the edge */
+    right: clamp(1rem, 3vw, 2rem) !important;
     z-index: 1000 !important;
     padding: 0.5rem !important;
   }
@@ -125,8 +124,7 @@ a {
   .mobile-menu .close-button {
     position: absolute !important;
     top: 1rem !important;
-    right: clamp(2rem, 5vw, 3rem) !important;
-    /* Match hamburger icon */
+    right: clamp(1rem, 3vw, 2rem) !important;
     z-index: 1001 !important;
   }
 
@@ -156,6 +154,7 @@ a {
 /* Badge & Social Links Section */
 .badge-social-section {
   margin: 0 !important;
+  /* Let the main container handle margins */
   padding: 0 !important;
 }
 
@@ -178,6 +177,7 @@ a {
 /* Contact Me Section */
 .contact-section {
   margin: 0 !important;
+  /* Let the main container handle margins */
   padding: 0 !important;
 }
 

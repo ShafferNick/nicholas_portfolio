@@ -16,7 +16,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <NavbarClient />
 
         {/* Main Content */}
-        <main className="flex-grow max-w-4xl mx-auto px-8 md:px-12 bg-blue-100" style={{ padding: '1rem 1rem' }}>
+        <main className="flex-grow max-w-4xl mx-auto px-8 md:px-12 bg-blue-100" style={{ padding: '1.5rem 3rem' }}>
           {children}
         </main>
 

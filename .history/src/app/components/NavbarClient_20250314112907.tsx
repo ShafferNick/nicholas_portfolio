@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 export default function NavbarClient() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState<string | null>(null);
+  const [activeLink, setActiveLink] = useState<string | null>(null); // Track the active link
 
   const handleLinkClick = (link: string) => {
-    setActiveLink(link);
-    setIsOpen(false);
+    setActiveLink(link); // Set the clicked link as active
+    setIsOpen(false); // Close the menu
   };
 
   return (
@@ -44,7 +44,7 @@ export default function NavbarClient() {
           >
             {/* Close Button */}
             <button
-              className="close-button text-white text-3xl font-extrabold"
+              className="absolute top-4 right-4 text-black text-2xl font-bold"
               onClick={() => setIsOpen(false)}
             >
               ✕
@@ -53,28 +53,28 @@ export default function NavbarClient() {
             <div className="flex flex-col items-center justify-center h-full space-y-4">
               <Link
                 href="/"
-                className={`text-white hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'home' ? 'active-link' : ''}`}
+                className={`text-black hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'home' ? 'active-link' : ''}`}
                 onClick={() => handleLinkClick('home')}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className={`text-white hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'about' ? 'active-link' : ''}`}
+                className={`text-black hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'about' ? 'active-link' : ''}`}
                 onClick={() => handleLinkClick('about')}
               >
                 About Me
               </Link>
               <Link
                 href="/projects"
-                className={`text-white hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'projects' ? 'active-link' : ''}`}
+                className={`text-black hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'projects' ? 'active-link' : ''}`}
                 onClick={() => handleLinkClick('projects')}
               >
                 Projects
               </Link>
               <Link
                 href="/contact"
-                className={`text-white hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'contact' ? 'active-link' : ''}`}
+                className={`text-black hover:text-red-400 transition-colors duration-300 ease-in-out text-xl py-2 text-center w-full ${activeLink === 'contact' ? 'active-link' : ''}`}
                 onClick={() => handleLinkClick('contact')}
               >
                 Contact

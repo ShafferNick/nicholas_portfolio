@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Exo', sans-serif;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 550;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Exo';
+}
+
+.hero-custom-black {
+  background-color: #1A1A1A;
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Force Desktop Menu Styling */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Force Mobile Menu Styling */
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+
+  .mobile-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+.debug-mobile {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.debug-desktop {
+  background-color: rgba(0, 255, 0, 0.3);
+}

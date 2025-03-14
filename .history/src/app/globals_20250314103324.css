@@ -65,41 +65,29 @@ a {
 
   .nav-link {
     margin: 0.5rem 1rem;
+    /* Margins around all menu items */
     padding: 0.25rem 0;
+    /* Optional: Adds vertical padding for better hover area */
     transition: color 0.3s ease-in-out;
   }
 
   .nav-link:hover {
     color: #d1d5db;
+    /* Tailwind gray-300 */
     text-decoration: underline;
     text-decoration-thickness: 2px;
+    /* Bold underline */
   }
 }
 
 /* Mobile Menu Styling */
 @media (max-width: 767px) {
-  nav .desktop-menu {
+  .desktop-menu {
     display: none !important;
   }
 
   .mobile-menu-toggle {
     display: block !important;
-    position: fixed !important;
-    /* Ensure it stays in place */
-    top: 1rem !important;
-    right: 1rem !important;
-    z-index: 1000 !important;
-    /* Ensure it’s above everything */
-  }
-
-  /* Ensure the hamburger icon lines are visible */
-  .mobile-menu-toggle span {
-    background-color: #ffffff !important;
-    /* Force white color */
-    width: 32px !important;
-    height: 4px !important;
-    margin-bottom: 6px !important;
-    border-radius: 2px !important;
   }
 
   .mobile-menu {
@@ -110,43 +98,10 @@ a {
   }
 }
 
-/* Badge & Social Links Section */
-.badge-social-section {
-  margin-left: 1rem;
-  margin-bottom: 2rem;
+.debug-mobile {
+  background-color: rgba(255, 0, 0, 0.3);
 }
 
-.badge-social-header {
-  text-align: left;
+.debug-desktop {
+  background-color: rgba(0, 255, 0, 0.3);
 }
-
-.social-links {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.social-link-img {
-  width: 40px;
-  height: 40px;
-}
-
-/* Contact Me Section */
-.contact-section {
-  margin-left: 1rem;
-  margin-bottom: 2rem;
-}
-
-.contact-me {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.contact-icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Removed debug classes */

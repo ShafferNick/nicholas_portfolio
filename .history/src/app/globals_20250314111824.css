@@ -84,22 +84,6 @@ a {
 
   .mobile-menu-toggle {
     display: block !important;
-    position: fixed !important;
-    /* Ensure it stays in place */
-    top: 1rem !important;
-    right: 1rem !important;
-    z-index: 1000 !important;
-    /* Ensure it’s above everything */
-  }
-
-  /* Ensure the hamburger icon lines are visible */
-  .mobile-menu-toggle span {
-    background-color: #ffffff !important;
-    /* Force white color */
-    width: 32px !important;
-    height: 4px !important;
-    margin-bottom: 6px !important;
-    border-radius: 2px !important;
   }
 
   .mobile-menu {
@@ -149,4 +133,10 @@ a {
   height: 24px;
 }
 
-/* Removed debug classes */
+.debug-mobile {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.debug-desktop {
+  background-color: rgba(0, 255, 0, 0.3);
+}

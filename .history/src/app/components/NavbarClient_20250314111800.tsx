@@ -9,14 +9,14 @@ export default function NavbarClient() {
     <nav className="bg-transparent text-white p-4 sticky top-0 z-10">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-8">
         {/* Desktop Menu Items */}
-        <div className="hidden md:flex justify-between w-full desktop-menu">
+        <div className="hidden md:flex justify-between w-full desktop-menu debug-desktop">
           <Link href="/" className="nav-link">Home</Link>
           <Link href="/about" className="nav-link">About Me</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
           <Link href="/projects" className="nav-link">Projects</Link>
         </div>
         {/* Hamburger Menu Toggle */}
-        <div className="md:hidden relative mobile-menu-toggle">
+        <div className="md:hidden relative mobile-menu-toggle debug-mobile">
           <label htmlFor="menuToggle" className="block fixed top-4 right-4 z-50 select-none cursor-pointer">
             <input
               type="checkbox"

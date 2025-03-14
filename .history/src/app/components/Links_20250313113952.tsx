@@ -14,7 +14,7 @@ export default function Links({ links }: { links: Link[] }) {
   return (
     <section className="mb-8">
       <h2 className="text-2xl font-regular mb-2">Badge & Social Links</h2>
-      <div className="flex justify-around items-center flex-wrap gap-4">
+      <div className="flex justify-around items-left flex-wrap gap-4">
         {links.map(link => (
           <a
             key={link._id}

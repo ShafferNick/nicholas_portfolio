@@ -76,41 +76,6 @@ a {
   }
 }
 
-/* Mobile Menu Styling */
-@media (max-width: 767px) {
-  nav .desktop-menu {
-    display: none !important;
-  }
-
-  .mobile-menu-toggle {
-    display: block !important;
-    position: fixed !important;
-    /* Ensure it stays in place */
-    top: 1rem !important;
-    right: 1rem !important;
-    z-index: 1000 !important;
-    /* Ensure it’s above everything */
-  }
-
-  /* Ensure the hamburger icon lines are visible */
-  .mobile-menu-toggle span {
-    background-color: #ffffff !important;
-    /* Force white color */
-    width: 32px !important;
-    height: 4px !important;
-    margin-bottom: 6px !important;
-    border-radius: 2px !important;
-  }
-
-  .mobile-menu {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 1rem;
-  }
-}
-
-/* Badge & Social Links Section */
 .badge-social-section {
   margin-left: 1rem;
   margin-bottom: 2rem;
@@ -132,7 +97,6 @@ a {
   height: 40px;
 }
 
-/* Contact Me Section */
 .contact-section {
   margin-left: 1rem;
   margin-bottom: 2rem;
@@ -149,4 +113,75 @@ a {
   height: 24px;
 }
 
-/* Removed debug classes */
+/* Mobile Menu Styling */
+@media (max-width: 767px) {
+  nav .desktop-menu {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+
+  .mobile-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem;
+  }
+
+  /* Badge & Social Links Section */
+  .badge-social-section {
+    margin-left: 1rem;
+    /* Left margin */
+  }
+
+  .badge-social-header {
+    text-align: left;
+    /* Left-align the header */
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+    /* Evenly spread across the screen */
+    margin-left: 1rem;
+    /* Left margin */
+    margin-right: 1rem;
+    /* Ensure spacing on the right */
+  }
+
+  .social-link-img {
+    width: 40px;
+    /* Adjust size as needed */
+    height: 40px;
+  }
+
+  /* Contact Me Section */
+  .contact-section {
+    margin-left: 1rem;
+    /* Left margin */
+  }
+
+  .contact-me {
+    display: flex;
+    align-items: center;
+    /* Align text and icon on the same line */
+    gap: 0.5rem;
+    /* Space between text and icon */
+  }
+
+  .contact-icon {
+    width: 24px;
+    /* Adjust size as needed */
+    height: 24px;
+  }
+}
+
+.debug-mobile {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.debug-desktop {
+  background-color: rgba(0, 255, 0, 0.3);
+}

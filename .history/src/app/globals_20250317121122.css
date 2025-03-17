@@ -1,0 +1,82 @@
+/* ... (existing imports and styles unchanged) ... */
+
+/* Professional History Section */
+.professional-history-section {
+  color: #000000 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.professional-history-section * {
+  color: #000000 !important;
+}
+
+/* Style react-slick arrows and dots */
+.professional-history-section .slick-prev,
+.professional-history-section .slick-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #000000;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  /* Hide arrows by default */
+}
+
+.professional-history-section .slick-prev:hover,
+.professional-history-section .slick-next:hover {
+  background: #ffffff;
+  color: #000000;
+  opacity: 1;
+  /* Ensure full opacity on direct hover */
+}
+
+.professional-history-section .slick-prev {
+  left: -50px;
+}
+
+.professional-history-section .slick-next {
+  right: -50px;
+}
+
+/* Show arrows when hovering near the edges of the slider */
+.professional-history-section .slick-slider:hover .slick-prev,
+.professional-history-section .slick-slider:hover .slick-next {
+  opacity: 1;
+}
+
+.professional-history-section .slick-dots {
+  bottom: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.professional-history-section .slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.professional-history-section .slick-dots li button:before {
+  font-size: 12px;
+  color: #000000;
+}
+
+.professional-history-section .slick-dots li.slick-active button:before {
+  color: #000000;
+}
+
+/* Add spacing between bullet points in Professional History */
+.professional-history-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.professional-history-section ul li {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ... (rest of the file unchanged) ... */

@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen w-full overflow-x-hidden" suppressHydrationWarning>
+      <body className="flex flex-col min-h-screen" suppressHydrationWarning>
         {/* Navbar */}
         <NavbarClient />
 
-        {/* Main Content - Full width with increased padding */}
-        <main className="flex-grow w-full overflow-x-hidden px-12 md:px-20">
+        {/* Main Content - Full width */}
+        <main className="flex-grow w-full">
           {children}
         </main>
 

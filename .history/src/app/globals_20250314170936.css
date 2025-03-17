@@ -1,3 +1,4 @@
+/* Existing styles unchanged */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;700&display=swap');
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
@@ -150,42 +151,10 @@ a {
   }
 }
 
-/* Ensure all text elements within <main> have left and right padding */
-main h1,
-main h2,
-main h3,
-main p,
-main ul,
-main li,
-main span,
-main div.contact-me {
-  padding-left: 1.5rem !important;
-  /* 24px on mobile */
-  padding-right: 1rem !important;
-  /* 16px on mobile */
-}
-
-@media (min-width: 768px) {
-
-  main h1,
-  main h2,
-  main h3,
-  main p,
-  main ul,
-  main li,
-  main span,
-  main div.contact-me {
-    padding-left: 2rem !important;
-    /* 32px on desktop */
-    padding-right: 1.5rem !important;
-    /* 24px on desktop */
-  }
-}
-
 /* Professional History Section */
 .professional-history-section {
   color: #000000 !important;
-  width: 100vw !important;
+  width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -194,46 +163,35 @@ main div.contact-me {
   color: #000000 !important;
 }
 
-/* Ensure job title is bold */
-.professional-history-section h3 {
-  font-weight: 700 !important;
-}
-
 /* Style react-slick arrows and dots */
 .professional-history-section .slick-prev,
 .professional-history-section .slick-next {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 2px solid #000000;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   z-index: 10;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .professional-history-section .slick-prev:hover,
 .professional-history-section .slick-next:hover {
-  background: #ffffff;
-  color: #000000;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .professional-history-section .slick-prev {
   left: -50px;
+  /* Position outside the slider */
 }
 
 .professional-history-section .slick-next {
   right: -50px;
+  /* Position outside the slider */
 }
 
 .professional-history-section .slick-dots {
-  bottom: 10px;
-  text-align: center;
-  position: relative;
-}
-
-.professional-history-section .slick-dots li {
-  display: inline-block;
-  margin: 0 5px;
+  bottom: -40px;
+  /* Position dots below the slider */
 }
 
 .professional-history-section .slick-dots li button:before {
@@ -243,17 +201,6 @@ main div.contact-me {
 
 .professional-history-section .slick-dots li.slick-active button:before {
   color: #000000;
-}
-
-/* Add spacing between bullet points in Professional History */
-.professional-history-section ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.professional-history-section ul li {
-  display: block;
-  margin-bottom: 8px;
 }
 
 /* Badge & Social Links Section */
@@ -302,48 +249,4 @@ main div.contact-me {
 
 .contact-icon:hover {
   transform: scale(1.2);
-}
-
-/* Adjustments for Professional History Section Spacing */
-.professional-history-section h2 {
-  margin-bottom: 0.5rem !important;
-  /* Closer spacing below header */
-}
-
-.professional-history-section p.italic {
-  margin-bottom: 1rem !important;
-  /* Closer spacing below paragraph */
-}
-
-/* Ensure card content adjusts on smaller screens */
-.professional-history-section .slick-slide .flex-col {
-  min-height: 0 !important;
-  /* Override fixed height */
-  display: flex;
-  flex-direction: column;
-}
-
-.professional-history-section .slick-slide img {
-  max-width: 100 !important;
-  /* Ensure images scale down */
-  height: auto !important;
-}
-
-@media (max-width: 767px) {
-  .professional-history-section .slick-slide .p-6 {
-    padding: 1rem !important;
-    /* Reduce padding on mobile */
-  }
-
-  .professional-history-section .slick-slide img {
-    max-height: 80px !important;
-    /* Smaller logo on mobile */
-    width: auto !important;
-  }
-
-  .professional-history-section .slick-prev,
-  .professional-history-section .slick-next {
-    display: none !important;
-    /* Hide arrows on mobile if desired */
-  }
 }

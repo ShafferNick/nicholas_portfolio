@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;700&display=swap');
 @import 'slick-carousel/slick/slick.css';
+/* Add slick-carousel styles */
 @import 'slick-carousel/slick/slick-theme.css';
+/* Add slick-carousel theme styles */
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +18,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Rest of your existing styles remain unchanged */
 h1 {
   font-weight: 700;
 }
@@ -75,6 +78,8 @@ a {
   .nav-link:hover {
     color: #d1d5db;
     text-decoration: underline;
+    text-decoration: underline #4781EE;
+    text-decoration-thickness: 5px;
     text-decoration-thickness: 2px;
   }
 }
@@ -122,6 +127,7 @@ a {
     transform: translateX(0) !important;
   }
 
+  /* Style the close button */
   .mobile-menu .close-button {
     position: absolute !important;
     top: 1rem !important;
@@ -129,6 +135,7 @@ a {
     z-index: 1001 !important;
   }
 
+  /* Style the mobile menu links */
   .mobile-menu a {
     color: #ffffff !important;
     font-size: 1.25rem !important;
@@ -145,115 +152,22 @@ a {
     font-weight: bold !important;
   }
 
+  /* Increase spacing between links */
   .mobile-menu .flex-col {
     gap: 2rem !important;
-  }
-}
-
-/* Ensure all text elements within <main> have left and right padding */
-main h1,
-main h2,
-main h3,
-main p,
-main ul,
-main li,
-main span,
-main div.contact-me {
-  padding-left: 1.5rem !important;
-  /* 24px on mobile */
-  padding-right: 1rem !important;
-  /* 16px on mobile */
-}
-
-@media (min-width: 768px) {
-
-  main h1,
-  main h2,
-  main h3,
-  main p,
-  main ul,
-  main li,
-  main span,
-  main div.contact-me {
-    padding-left: 2rem !important;
-    /* 32px on desktop */
-    padding-right: 1.5rem !important;
-    /* 24px on desktop */
   }
 }
 
 /* Professional History Section */
 .professional-history-section {
   color: #000000 !important;
-  width: 100vw !important;
+  width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
 .professional-history-section * {
   color: #000000 !important;
-}
-
-/* Ensure job title is bold */
-.professional-history-section h3 {
-  font-weight: 700 !important;
-}
-
-/* Style react-slick arrows and dots */
-.professional-history-section .slick-prev,
-.professional-history-section .slick-next {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 2px solid #000000;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.professional-history-section .slick-prev:hover,
-.professional-history-section .slick-next:hover {
-  background: #ffffff;
-  color: #000000;
-}
-
-.professional-history-section .slick-prev {
-  left: -50px;
-}
-
-.professional-history-section .slick-next {
-  right: -50px;
-}
-
-.professional-history-section .slick-dots {
-  bottom: 10px;
-  text-align: center;
-  position: relative;
-}
-
-.professional-history-section .slick-dots li {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.professional-history-section .slick-dots li button:before {
-  font-size: 12px;
-  color: #000000;
-}
-
-.professional-history-section .slick-dots li.slick-active button:before {
-  color: #000000;
-}
-
-/* Add spacing between bullet points in Professional History */
-.professional-history-section ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.professional-history-section ul li {
-  display: block;
-  margin-bottom: 8px;
 }
 
 /* Badge & Social Links Section */
@@ -302,48 +216,4 @@ main div.contact-me {
 
 .contact-icon:hover {
   transform: scale(1.2);
-}
-
-/* Adjustments for Professional History Section Spacing */
-.professional-history-section h2 {
-  margin-bottom: 0.5rem !important;
-  /* Closer spacing below header */
-}
-
-.professional-history-section p.italic {
-  margin-bottom: 1rem !important;
-  /* Closer spacing below paragraph */
-}
-
-/* Ensure card content adjusts on smaller screens */
-.professional-history-section .slick-slide .flex-col {
-  min-height: 0 !important;
-  /* Override fixed height */
-  display: flex;
-  flex-direction: column;
-}
-
-.professional-history-section .slick-slide img {
-  max-width: 100 !important;
-  /* Ensure images scale down */
-  height: auto !important;
-}
-
-@media (max-width: 767px) {
-  .professional-history-section .slick-slide .p-6 {
-    padding: 1rem !important;
-    /* Reduce padding on mobile */
-  }
-
-  .professional-history-section .slick-slide img {
-    max-height: 80px !important;
-    /* Smaller logo on mobile */
-    width: auto !important;
-  }
-
-  .professional-history-section .slick-prev,
-  .professional-history-section .slick-next {
-    display: none !important;
-    /* Hide arrows on mobile if desired */
-  }
 }

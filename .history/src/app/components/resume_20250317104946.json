@@ -1,0 +1,160 @@
+{
+    "_id": "job_amwell_technical_project_manager",
+    "_type": "job",
+    "title": "Technical Project Manager",
+    "dates": {
+        "startDate": "2023-01-01",
+        "endDate": null
+    },
+    "description": [
+        "Saved $500k annually by implementing a streamlined process for managing service updates within three months, optimizing financial operations (FinOps) and reducing costs.",
+        "Oversaw cloud infrastructure projects, including implementations and migrations, ensuring seamless transitions with minimal downtime and enhanced system performance.",
+        "Managed security and compliance initiatives, including OSS violation remediation, SAST, and CVE management, maintaining a robust security posture for organizational systems."
+    ],
+    "location": "Remote",
+    "companyLogo": null
+}
+{
+    "_id": "job_rehab_consultant",
+    "_type": "job",
+    "title": "Consultant Project Manager, Technical Operations, Web Development",
+    "dates": {
+        "startDate": "2022-01-01",
+        "endDate": "2023-01-01"
+    },
+    "description": [
+        "Signed up over 1,000 users in 2 months to an MVP patient portal through a targeted social media campaign, achieving a ≈4% conversion rate into paying customers via an effective sales funnel.",
+        "Led the development of the patient portal, prioritizing user experience and functionality to create an intuitive and engaging platform for healthcare consumers.",
+        "Directed technical operations to ensure smooth deployment and ongoing maintenance, minimizing disruptions and enhancing system reliability."
+    ],
+    "location": "Remote",
+    "companyLogo": null
+}
+{
+    "_id": "job_palm_beach_product_analyst",
+    "_type": "job",
+    "title": "Product Analyst, Project Manager",
+    "dates": {
+        "startDate": "2020-01-01",
+        "endDate": "2022-01-01"
+    },
+    "description": [
+        "Decreased physician-dropped patients by over 70% by managing a retention program for Medicare patients, strengthening in-network physician relationships and improving patient outcomes.",
+        "Analyzed population health data to identify trends and opportunities, providing actionable insights that informed strategic healthcare decisions.",
+        "Coordinated projects to enhance patient care and physician network efficiency, fostering collaboration across teams to deliver high-quality healthcare solutions."
+    ],
+    "location": "Palm Beach, FL",
+    "companyLogo": null
+}
+{
+    "_id": "job_walgreens_pharmacy_technician",
+    "_type": "job",
+    "title": "Certified Pharmacy Technician",
+    "dates": {
+        "startDate": "2019-01-01",
+        "endDate": "2020-01-01"
+    },
+    "description": [
+        "Processed 200+ prescriptions daily with a 99.9% accuracy rate, ensuring timely and precise medication dispensing under pharmacist supervision.",
+        "Delivered outstanding customer service by addressing patient inquiries and resolving issues with empathy and professionalism.",
+        "Collaborated with pharmacy staff to maintain inventory accuracy and streamline workflows, enhancing operational efficiency."
+    ],
+    "location": "Unknown",
+    "companyLogo": null
+}
+{
+    "_id": "job_tutor_math_science",
+    "_type": "job",
+    "title": "College Math and Science Tutor",
+    "dates": {
+        "startDate": "2018-01-01",
+        "endDate": "2020-01-01"
+    },
+    "description": [
+        "Helped 90% of students improve grades by at least one letter grade in subjects including algebra, statistics, calculus, anatomy, chemistry, biology, and organic chemistry.",
+        "Provided personalized tutoring sessions tailored to individual learning styles, fostering a deeper understanding of complex concepts.",
+        "Developed customized lesson plans and study strategies, empowering students to build confidence and achieve academic success."
+    ],
+    "location": "Self-Employed",
+    "companyLogo": null
+}
+{
+    "_id": "job_whole_foods_team_member",
+    "_type": "job",
+    "title": "Team Member – Specialty, Whole Body, Produce",
+    "dates": {
+        "startDate": "2016-01-01",
+        "endDate": "2018-01-01"
+    },
+    "description": [
+        "Achieved a 12% sales increase in Specialty, 8% in Whole Body, and reduced produce waste by 5% through customer engagement and inventory optimization strategies.",
+        "Educated customers on cheese and wine pairings, supplements, and fresh produce options, enhancing their shopping experience and building loyalty.",
+        "Managed inventory and merchandising across departments, ensuring product freshness, attractive displays, and optimal stock availability."
+    ],
+    "location": "Unknown",
+    "companyLogo": null
+}
+{
+    "_id": "job_yardhouse_server",
+    "_type": "job",
+    "title": "Server",
+    "dates": {
+        "startDate": "2014-01-01",
+        "endDate": "2016-01-01"
+    },
+    "description": [
+        "Increased average check size by 15% through suggestive selling and upselling premium menu items, boosting revenue during shifts.",
+        "Provided attentive and friendly service, creating a memorable dining experience that encouraged repeat visits from guests.",
+        "Mastered extensive menu knowledge, including food pairings and daily specials, to offer informed recommendations and elevate customer satisfaction."
+    ],
+    "location": "Unknown",
+    "companyLogo": null
+}
+{
+    "_id": "job_starbucks_barista",
+    "_type": "job",
+    "title": "Barista",
+    "dates": {
+        "startDate": "2014-01-01",
+        "endDate": "2016-01-01"
+    },
+    "description": [
+        "Contributed to a 10% increase in store sales by delivering efficient service and promoting add-ons like pastries and seasonal drinks.",
+        "Crafted exquisite coffee and tea beverages with precision, adhering to Starbucks’ high standards for quality and presentation.",
+        "Excelled in customer service by creating a warm, welcoming atmosphere and personalizing interactions to build a loyal customer base."
+    ],
+    "location": "Unknown",
+    "companyLogo": null
+}
+{
+    "_id": "job_cobb_theaters_projectionist",
+    "_type": "job",
+    "title": "Projectionist",
+    "dates": {
+        "startDate": "2013-01-01",
+        "endDate": "2014-01-01"
+    },
+    "description": [
+        "Reduced film-related delays by 20% by efficiently managing 35mm film projectors across 18 theaters.",
+        "Expertly operated and maintained projection equipment, ensuring high-quality film presentations for audiences.",
+        "Troubleshot technical issues swiftly, minimizing downtime and preserving show schedules."
+    ],
+    "location": "Unknown",
+    "companyLogo": null
+}
+{
+    "_id": "job_cobb_theaters_associate",
+    "_type": "job",
+    "title": "Associate",
+    "dates": {
+        "startDate": "2012-01-01",
+        "endDate": "2013-01-01"
+    },
+    "description": [
+        "Assisted in increasing concession sales by 15% by implementing upselling techniques and designing eye-catching promotional displays.",
+        "Delivered exceptional customer service, ensuring a seamless and enjoyable movie-going experience for patrons.",
+        "Managed concessions inventory and maintained a clean, organized environment to meet operational standards."
+    ],
+    "location": "Unknown",
+    "companyLogo": null
+}

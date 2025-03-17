@@ -39,10 +39,10 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-5xl md:text-6xl font-bold text-left pt-8 md:pt-12">Professional History</h2>
-    <p className="text-sm italic mb-4">Below is a summary of my full work history, inclusive of all my work experience.</p>
-    <Slider {...settings}>
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-5xl md:text-6xl font-bold mb-2 text-left pt-8 md:pt-12">Professional History</h2>
+        <p className="text-sm italic mb-4">Below is a summary of my full work history, inclusive of all my work experience.</p>
+        <Slider {...settings}>
           {jobs.map((job) => (
             <div key={job._id} className="px-2">
               <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[400px] transition-transform duration-300 hover:shadow-xl">

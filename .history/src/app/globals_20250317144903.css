@@ -304,15 +304,15 @@ main div.contact-me {
   transform: scale(1.2);
 }
 
-/* Adjustments for Professional History Section Spacing */
+/* New Adjustments for Professional History Section */
 .professional-history-section h2 {
   margin-bottom: 0.5rem !important;
-  /* Closer spacing below header */
+  /* Closer spacing for header and paragraph */
 }
 
 .professional-history-section p.italic {
   margin-bottom: 1rem !important;
-  /* Closer spacing below paragraph */
+  /* Adjust paragraph spacing */
 }
 
 /* Ensure card content adjusts on smaller screens */

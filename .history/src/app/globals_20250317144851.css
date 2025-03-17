@@ -1,3 +1,4 @@
+/* Existing imports and styles unchanged */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;700&display=swap');
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
@@ -302,48 +303,4 @@ main div.contact-me {
 
 .contact-icon:hover {
   transform: scale(1.2);
-}
-
-/* Adjustments for Professional History Section Spacing */
-.professional-history-section h2 {
-  margin-bottom: 0.5rem !important;
-  /* Closer spacing below header */
-}
-
-.professional-history-section p.italic {
-  margin-bottom: 1rem !important;
-  /* Closer spacing below paragraph */
-}
-
-/* Ensure card content adjusts on smaller screens */
-.professional-history-section .slick-slide .flex-col {
-  min-height: 0 !important;
-  /* Override fixed height */
-  display: flex;
-  flex-direction: column;
-}
-
-.professional-history-section .slick-slide img {
-  max-width: 100 !important;
-  /* Ensure images scale down */
-  height: auto !important;
-}
-
-@media (max-width: 767px) {
-  .professional-history-section .slick-slide .p-6 {
-    padding: 1rem !important;
-    /* Reduce padding on mobile */
-  }
-
-  .professional-history-section .slick-slide img {
-    max-height: 80px !important;
-    /* Smaller logo on mobile */
-    width: auto !important;
-  }
-
-  .professional-history-section .slick-prev,
-  .professional-history-section .slick-next {
-    display: none !important;
-    /* Hide arrows on mobile if desired */
-  }
 }

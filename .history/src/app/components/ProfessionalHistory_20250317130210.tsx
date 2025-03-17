@@ -25,27 +25,17 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    responsive: [
-      {
-        breakpoint: 768, // Adjust for tablet/mobile
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false, // Optional: Hide arrows on small screens
-        },
-      },
-    ],
   };
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-5xl md:text-6xl font-bold text-left pt-8 md:pt-12">Professional History</h2>
-    <p className="text-sm italic mb-4">Below is a summary of my full work history, inclusive of all my work experience.</p>
-    <Slider {...settings}>
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-5xl md:text-6xl font-bold mb-6 text-left">Professional History</h2>
+        <p className="text-sm italic mb-6">Below is a summary of my full work history, inclusive of all my work experience.</p>
+        <Slider {...settings}>
           {jobs.map((job) => (
             <div key={job._id} className="px-2">
-              <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[400px] transition-transform duration-300 hover:shadow-xl">
+              <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col h-[400px] transition-transform duration-300 hover:shadow-xl">
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold mb-2">{job.title}</h3>
                   <p className="mb-2 text-sm italic">

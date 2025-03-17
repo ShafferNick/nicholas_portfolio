@@ -15,8 +15,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Navbar */}
         <NavbarClient />
 
-        {/* Main Content - Full width with increased padding */}
-        <main className="flex-grow w-full overflow-x-hidden px-12 md:px-20">
+        {/* Main Content - Full width with overflow control */}
+        <main className="flex-grow w-full overflow-x-hidden">
           {children}
         </main>
 

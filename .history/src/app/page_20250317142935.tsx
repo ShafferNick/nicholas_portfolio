@@ -62,28 +62,28 @@ export default async function Home() {
       <ProfessionalHistory jobs={jobs} />
 
       {/* Projects Section - Light Gray Background */}
-<section className="py-16 bg-[#EFF0F3] text-black animate-slide-in">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Projects</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
-        <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
-        <h3 className="text-xl font-medium">Project 1</h3>
-        <p className="text-gray-600 mt-2">Coming Soon</p>
-      </div>
-      <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
-        <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
-        <h3 className="text-xl font-medium">Project 2</h3>
-        <p className="text-gray-600 mt-2">Coming Soon</p>
-      </div>
-      <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
-        <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
-        <h3 className="text-xl font-medium">Project 3</h3>
-        <p className="text-gray-600 mt-2">Coming Soon</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <section className="py-16 bg-[#EFF0F3] text-black animate-slide-in">
+        <div className="max-w-4xl mx-auto px-8 md:px-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-medium">Project 1</h3>
+              <p className="text-gray-600 mt-2">Coming Soon</p>
+            </div>
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-medium">Project 2</h3>
+              <p className="text-gray-600 mt-2">Coming Soon</p>
+            </div>
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-medium">Project 3</h3>
+              <p className="text-gray-600 mt-2">Coming Soon</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

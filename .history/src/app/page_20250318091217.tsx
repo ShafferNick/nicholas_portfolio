@@ -1,9 +1,9 @@
-import { client } from '@/app/sanityClient';
+import { client } from '@/sanityClient';
 import Image from 'next/image';
 import Hero from './components/Hero';
 import BadgeSocialLinks from './components/BadgeSocialLinks';
 import ProfessionalHistory from './components/ProfessionalHistory';
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { SanityImageSource } from '@/types/sanity-types';
 import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
 
 type Job = {

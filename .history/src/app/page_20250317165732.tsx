@@ -1,10 +1,9 @@
-import { client } from '@/app/sanityClient';
+import { client } from '@/sanityClient';
 import Image from 'next/image';
 import Hero from './components/Hero';
 import BadgeSocialLinks from './components/BadgeSocialLinks';
 import ProfessionalHistory from './components/ProfessionalHistory';
-import { SanityImageSource } from '@/app/types/sanity-types';
-import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
+import { SanityImageSource } from '@/types/sanity-types'; // Import the custom type
 
 type Job = {
   _id: string;
@@ -12,7 +11,7 @@ type Job = {
   dates: { startDate: string; endDate: string | null };
   description: string[];
   location: string;
-  companyLogo?: SanityImageSource;
+  companyLogo?: SanityImageSource; // Use the custom type
 };
 
 type Profile = {
@@ -38,7 +37,7 @@ async function getData() {
       location,
       companyLogo {
         ...,
-        asset->
+        asset-> // Dereference the asset to include its details
       }
     } | order(dates.startDate desc)`
   );

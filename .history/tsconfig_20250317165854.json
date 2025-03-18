@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "ES2017",
     "lib": [
       "dom",
@@ -25,15 +24,17 @@
     ],
     "paths": {
       "@/*": [
-        "src/*"
-      ]
+        "./src/app/*",
+        "src/*",
+      ] // Updated to map to src/app
     }
   },
   "include": [
     "next-env.d.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    ".next/types/**/*.ts"
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*",
   ],
   "exclude": [
     "node_modules"

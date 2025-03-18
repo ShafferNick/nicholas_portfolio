@@ -2,8 +2,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { urlFor } from '@/sanityImageUrl';
+import { SanityImageAssetDocument } from '@sanity/client';
 
 type Job = {
   _id: string;
@@ -11,7 +11,7 @@ type Job = {
   dates: { startDate: string; endDate: string | null };
   description: string[];
   location: string;
-  companyLogo?: SanityImageSource;
+  companyLogo?: SanityImageAssetDocument;
 };
 
 type ProfessionalHistoryProps = {
@@ -28,22 +28,22 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
     arrows: true,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 768, // Adjust for tablet/mobile
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
+          arrows: false, // Optional: Hide arrows on small screens
         },
       },
     ],
   };
 
   return (
-    <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-5xl md:text-6xl font-bold text-left pt-8 md:pt-12">Professional History</h2>
-        <p className="text-sm italic">Below is a summary of my full work history, inclusive of all my work experience.</p>
-        <Slider {...settings}>
+    <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-5xl md:text-6xl font-bold text-left pt-8 md:pt-12">Professional History</h2>
+    <p className="text-sm italic mb-4">Below is a summary of my full work history, inclusive of all my work experience.</p>
+    <Slider {...settings}>
           {jobs.map((job) => (
             <div key={job._id} className="px-2">
               <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[400px] transition-transform duration-300 hover:shadow-xl">
@@ -64,7 +64,6 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
                         alt={`${job.title} company logo`}
                         width={200}
                         height={200}
-                        unoptimized={true}
                         className="object-contain"
                         style={{ maxHeight: '120px' }}
                       />

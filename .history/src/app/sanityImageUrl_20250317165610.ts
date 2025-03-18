@@ -1,6 +1,6 @@
 import imageUrlBuilder from '@sanity/image-url';
-import { client } from '@/app/sanityClient';
-import { SanityImageSource } from '@/app/types/sanity-types'; // Should resolve to src/types/sanity-types.ts
+import { client } from '@/sanityClient';
+import { SanityImageSource } from '@/types/sanity-types'; // Import the custom type
 
 const builder = imageUrlBuilder(client);
 

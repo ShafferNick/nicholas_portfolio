@@ -2,8 +2,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { urlFor } from '@/sanityImageUrl';
+import { SanityImageSource } from '@/types/sanity-types'; // Should resolve to src/types/sanity-types.ts
 
 type Job = {
   _id: string;

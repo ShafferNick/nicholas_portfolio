@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { SanityImageSource } from '@/types/sanity-types';
 
 type Job = {
   _id: string;

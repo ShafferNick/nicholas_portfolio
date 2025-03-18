@@ -2,8 +2,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { urlFor } from '@/sanityImageUrl';
+import { SanityImageSource } from '@/types/sanity-types'; // Import the custom type
 
 type Job = {
   _id: string;
@@ -11,7 +11,7 @@ type Job = {
   dates: { startDate: string; endDate: string | null };
   description: string[];
   location: string;
-  companyLogo?: SanityImageSource;
+  companyLogo?: SanityImageSource; // Use the custom type
 };
 
 type ProfessionalHistoryProps = {

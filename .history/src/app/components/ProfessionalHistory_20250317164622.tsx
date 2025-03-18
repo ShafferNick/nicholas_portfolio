@@ -2,8 +2,16 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { urlFor } from '@/sanityImageUrl';
+
+// Fallback type if SanityAssetImageDocument isn't available
+type SanityImage = {
+  _type: 'image';
+  asset: {
+    _ref: string;
+    _type: 'reference';
+  };
+};
 
 type Job = {
   _id: string;
@@ -11,7 +19,7 @@ type Job = {
   dates: { startDate: string; endDate: string | null };
   description: string[];
   location: string;
-  companyLogo?: SanityImageSource;
+  companyLogo?: SanityImage; // Use the fallback type
 };
 
 type ProfessionalHistoryProps = {

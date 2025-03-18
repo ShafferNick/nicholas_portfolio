@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Hero from './components/Hero';
 import BadgeSocialLinks from './components/BadgeSocialLinks';
 import ProfessionalHistory from './components/ProfessionalHistory';
-import Projects from './components/Projects'; // Import the new component
 import { SanityImageSource } from '@/app/types/sanity-types';
+import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
 
 type Job = {
   _id: string;
@@ -13,14 +13,6 @@ type Job = {
   description: string[];
   location: string;
   companyLogo?: SanityImageSource;
-};
-
-type Project = {
-  _id: string;
-  title: string;
-  timeline: { startDate: string; endDate: string | null };
-  summary: string;
-  description: string[];
 };
 
 type Profile = {
@@ -50,21 +42,12 @@ async function getData() {
       }
     } | order(dates.startDate desc)`
   );
-  const projects = await client.fetch<Project[]>(
-    `*[_type == "project"] {
-      _id,
-      title,
-      timeline,
-      summary,
-      description
-    } | order(timeline.startDate desc)`
-  );
   const links = await client.fetch<Link[]>(`*[_type == "link"]`);
-  return { profile: profile[0], jobs, projects, links };
+  return { profile: profile[0], jobs, links };
 }
 
 export default async function Home() {
-  const { profile, jobs, projects, links } = await getData();
+  const { profile, jobs, links } = await getData();
 
   return (
     <>
@@ -92,8 +75,29 @@ export default async function Home() {
       {/* Professional History Section */}
       <ProfessionalHistory jobs={jobs} />
 
-      {/* Projects Section */}
-      <Projects projects={projects} />
+      {/* Projects Section - Light Gray Background */}
+      <section className="py-16 bg-[#EFF0F3] text-black animate-slide-in">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-medium">Project 1</h3>
+              <p className="text-gray-600 mt-2">Coming Soon</p>
+            </div>
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-medium">Project 2</h3>
+              <p className="text-gray-600 mt-2">Coming Soon</p>
+            </div>
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg animate-slide-in">
+              <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+              <h3 className="text-xl font-medium">Project 3</h3>
+              <p className="text-gray-600 mt-2">Coming Soon</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

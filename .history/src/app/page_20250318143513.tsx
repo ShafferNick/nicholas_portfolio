@@ -3,8 +3,9 @@ import Image from 'next/image';
 import Hero from './components/Hero';
 import BadgeSocialLinks from './components/BadgeSocialLinks';
 import ProfessionalHistory from './components/ProfessionalHistory';
-import Projects from './components/Projects'; // Import the new component
+import Projects from './components/Projects';
 import { SanityImageSource } from '@/app/types/sanity-types';
+import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
 
 type Job = {
   _id: string;
@@ -13,14 +14,6 @@ type Job = {
   description: string[];
   location: string;
   companyLogo?: SanityImageSource;
-};
-
-type Project = {
-  _id: string;
-  title: string;
-  timeline: { startDate: string; endDate: string | null };
-  summary: string;
-  description: string[];
 };
 
 type Profile = {
@@ -33,6 +26,14 @@ type Link = {
   title: string;
   url: string;
   icon: string;
+};
+
+type Project = {
+  _id: string;
+  title: string;
+  timeline: { startDate: string; endDate: string | null };
+  summary: string;
+  description: string[];
 };
 
 async function getData() {
@@ -64,7 +65,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const { profile, jobs, projects, links } = await getData();
+  const { profile, jobs, links } = await getData();
 
   return (
     <>
@@ -92,7 +93,7 @@ export default async function Home() {
       {/* Professional History Section */}
       <ProfessionalHistory jobs={jobs} />
 
-      {/* Projects Section */}
+      {/* Projects Section - Light Gray Background */}
       <Projects projects={projects} />
     </>
   );

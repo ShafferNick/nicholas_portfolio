@@ -25,7 +25,7 @@ export default function Links({ links }: { links: Link[] }) {
             title={link.title}
           >
             {link.icon === 'linkedin' ? (
-              <FontAwesomeIcon icon={faLinkedin} size="3x" />
+              <FontAwesomeIcon icon={faLinkedin} size="4x" />
 
             ) : link.icon === 'GitHub' ? (
               <Image

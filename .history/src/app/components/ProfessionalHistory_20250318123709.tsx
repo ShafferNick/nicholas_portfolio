@@ -37,8 +37,6 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
       },
     ],
   };
-    
-  
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">
@@ -59,7 +57,7 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
                       <li key={index}>{bullet}</li>
                     ))}
                   </ul>
-                  <div className="flex justify-center mt-auto">
+                  <div className="flex justify-center">
                     {job.companyLogo ? (
                       <Image
                         src={urlFor(job.companyLogo).fit('max').width(200).url()}

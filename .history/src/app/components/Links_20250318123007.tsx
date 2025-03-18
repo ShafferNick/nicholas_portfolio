@@ -25,8 +25,7 @@ export default function Links({ links }: { links: Link[] }) {
             title={link.title}
           >
             {link.icon === 'linkedin' ? (
-              <FontAwesomeIcon icon={faLinkedin} size="3x" />
-
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
             ) : link.icon === 'GitHub' ? (
               <Image
                 src="https://static-00.iconduck.com/assets.00/github-icon-2048x2048-dpporae2.png"
@@ -52,8 +51,8 @@ export default function Links({ links }: { links: Link[] }) {
               <Image
                 src="https://cdn.player.fm/images/21281221/series/SyPIfO73CwJqTAo6/512.png"
                 alt="Credly"
-                width={50}
-                height={50}
+                width={60}
+                height={60}
               />
             ) : null}
           </a>

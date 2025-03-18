@@ -37,8 +37,6 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
       },
     ],
   };
-    
-  
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">
@@ -48,7 +46,7 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
         <Slider {...settings}>
           {jobs.map((job) => (
             <div key={job._id} className="px-2">
-              <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[500px] transition-transform duration-300 hover:shadow-xl">
+              <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[400px] transition-transform duration-300 hover:shadow-xl">
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold mb-2">{job.title}</h3>
                   <p className="mb-2 text-sm italic">
@@ -59,7 +57,7 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
                       <li key={index}>{bullet}</li>
                     ))}
                   </ul>
-                  <div className="flex justify-center mt-auto">
+                  <div className="flex justify-center">
                     {job.companyLogo ? (
                       <Image
                         src={urlFor(job.companyLogo).fit('max').width(200).url()}

@@ -226,7 +226,7 @@ main div.contact-me {
 }
 
 .professional-history-section .slick-dots {
-  bottom: 5px;
+  bottom: 20px;
   text-align: center;
   position: relative;
 }
@@ -316,10 +316,6 @@ main div.contact-me {
 }
 
 /* Ensure card content adjusts on smaller screens */
-.professional-history-section .slick-slide {
-  padding-bottom: 2rem;
-}
-
 .professional-history-section .slick-slide .flex-col {
   min-height: 0 !important;
   /* Override fixed height */

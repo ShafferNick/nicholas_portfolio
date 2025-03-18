@@ -25,8 +25,7 @@ export default function Links({ links }: { links: Link[] }) {
             title={link.title}
           >
             {link.icon === 'linkedin' ? (
-              <FontAwesomeIcon icon={faLinkedin} size="3x" />
-
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
             ) : link.icon === 'GitHub' ? (
               <Image
                 src="https://static-00.iconduck.com/assets.00/github-icon-2048x2048-dpporae2.png"
@@ -45,7 +44,7 @@ export default function Links({ links }: { links: Link[] }) {
               <Image
                 src="https://images.credly.com/images/8a442ad3-10d8-46e4-9241-41b68cfb50a9/linkedin_thumb_VILT_Change_Practitioner_Certification_V2.png"
                 alt="Prosci Change Practitioner"
-                width={95}
+                width={85}
                 height={55}
               />
             ) : link.icon === 'credly' ? (

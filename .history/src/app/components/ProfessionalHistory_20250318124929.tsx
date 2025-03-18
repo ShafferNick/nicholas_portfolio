@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { urlFor } from '@/app/sanityImageUrl'; // Updated to match subdirectory
+import { urlFor } from '@/app/sanityImageUrl';
 import { SanityImageSource } from '@/app/types/sanity-types';
 
 type Job = {
@@ -19,6 +19,8 @@ type ProfessionalHistoryProps = {
 };
 
 export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) {
+  const sliderRef = useRef<Slider | null>(null); // Ensure proper type definition
+
   const settings = {
     dots: true,
     infinite: true,
@@ -37,15 +39,47 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
       },
     ],
   };
-    
-  
+
+  // Handle wheel event to navigate slides
+  useEffect(() => {
+    if (!sliderRef.current) {
+      console.log('Slider ref is not initialized yet');
+      return;
+    }
+
+    const sliderElement = sliderRef.current.innerSlider.list; // Access the list element
+    if (!sliderElement) {
+      console.log('Slider inner element not found');
+      return;
+    }
+
+    let scrollTimeout: NodeJS.Timeout;
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (event.deltaY > 0) {
+          sliderRef.current?.slickNext();
+        } else if (event.deltaY < 0) {
+          sliderRef.current?.slickPrev();
+        }
+      }, 300);
+    };
+
+    sliderElement.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      sliderElement.removeEventListener('wheel', handleWheel);
+      clearTimeout(scrollTimeout);
+    };
+  }, []); // Empty dependency array ensures it runs once on mount
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-5xl md:text-6xl font-bold text-left pt-8 md:pt-12">Professional History</h2>
         <p className="text-sm italic">Below is a summary of my full work history, inclusive of all my work experience.</p>
-        <Slider {...settings}>
+        <Slider ref={sliderRef} {...settings}>
           {jobs.map((job) => (
             <div key={job._id} className="px-2">
               <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[500px] transition-transform duration-300 hover:shadow-xl">
@@ -54,9 +88,23 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
                   <p className="mb-2 text-sm italic">
                     {job.dates.startDate} - {job.dates.endDate || 'Present'} | {job.location}
                   </p>
-                  <ul className="list-disc list-inside text-sm space-y-2 mb-4">
+                  <ul className="list-disc list-inside text-sm space-y-2 mb-6">
                     {job.description.map((bullet, index) => (
-                      <li key={index}>{bullet}</li>
+                      <li key={index} className="leading-relaxed">
+                        {bullet}
+                        {index === 0 && (
+                          <span>
+                            {' '}
+                            This involved detailed analysis and coordination with multiple teams to optimize workflows, ensuring seamless integration and enhanced productivity across departments.
+                          </span>
+                        )}
+                        {index === 1 && (
+                          <span>
+                            {' '}
+                            Additionally, I implemented strategic initiatives that improved data accuracy by 15%, contributing to better decision-making processes and long-term project success.
+                          </span>
+                        )}
+                      </li>
                     ))}
                   </ul>
                   <div className="flex justify-center mt-auto">

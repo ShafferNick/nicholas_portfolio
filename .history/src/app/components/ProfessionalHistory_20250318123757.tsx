@@ -37,8 +37,6 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
       },
     ],
   };
-    
-  
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">

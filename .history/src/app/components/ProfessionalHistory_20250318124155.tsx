@@ -38,7 +38,30 @@ export default function ProfessionalHistory({ jobs }: ProfessionalHistoryProps) 
     ],
   };
     
-  
+    // Handle wheel event to navigate slides
+  useEffect(() => {
+    const sliderElement = sliderRef.current?.innerSlider.list; // Access the slider list element
+    if (!sliderElement) return;
+
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault(); // Prevent default scrolling behavior
+      if (event.deltaY > 0) {
+        // Scroll down: move to next slide
+        sliderRef.current?.slickNext();
+      } else if (event.deltaY < 0) {
+        // Scroll up: move to previous slide
+        sliderRef.current?.slickPrev();
+      }
+    };
+
+    sliderElement.addEventListener('wheel', handleWheel, { passive: false });
+
+    // Cleanup event listener on unmount
+    return () => {
+      sliderElement.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
+
 
   return (
     <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">

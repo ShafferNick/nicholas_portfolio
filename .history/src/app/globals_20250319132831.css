@@ -471,8 +471,6 @@ footer .flex.justify-around>a {
 
 /* In src/app/globals.css */
 
-/* In src/app/globals.css */
-
 /* Education Section */
 .education-section {
   color: #000000 !important;
@@ -512,18 +510,5 @@ footer .flex.justify-around>a {
 @media (max-width: 767px) {
   .education-section .p-6 {
     padding: 1rem !important;
-  }
-
-  .education-section .grid {
-    grid-template-columns: 1fr !important;
-    /* Stack on mobile */
-  }
-}
-
-/* Ensure side-by-side layout on larger screens */
-@media (min-width: 768px) {
-  .education-section .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    /* Side by side on larger screens */
   }
 }

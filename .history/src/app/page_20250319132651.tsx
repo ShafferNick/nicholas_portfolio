@@ -83,20 +83,18 @@ async function getData() {
       } | order(dates.startDate desc)`
     );
     console.log('Fetched links in getData:', links);
-    console.log('Fetched education in getData:', education);
-    return { profile: profile[0], jobs, projects, links, education };
+    return { profile: profile[0], jobs, projects, links };
   } catch (error) {
     console.error('Error fetching data from Sanity:', error);
-    return { profile: { _id: '', summary: '' }, jobs: [], projects: [], links: [], education: [] };
+    return { profile: { _id: '', summary: '' }, jobs: [], projects: [], links: [] };
   }
 }
 
 export default async function Home() {
   const data = await getData();
-  const { profile, jobs, projects, links, education } = data;
+  const { profile, jobs, projects, links } = data;
 
   console.log('Links in Home (before rendering):', links);
-  console.log('Education in Home (before rendering):', education);
 
   const safeLinks = Array.isArray(links) ? links : [];
 
@@ -128,9 +126,6 @@ export default async function Home() {
 
       {/* Projects Section */}
       <Projects projects={projects} />
-
-      {/* Education Section */}
-      <Education education={education} />
 
       {/* Footer Section */}
       <FooterClient links={safeLinks} />

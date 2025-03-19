@@ -1,7 +1,6 @@
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faAward } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 
 type Link = {
@@ -13,29 +12,14 @@ type Link = {
 
 type LinksProps = {
   links: Link[];
-  isFooter?: boolean;
+  isFooter?: boolean; // Optional prop to adjust styling for footer
 };
 
 export default function Links({ links, isFooter = false }: LinksProps) {
-  console.log('Links in Links component:', links); // Debug log
-
   const getIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
       case 'linkedin':
         return faLinkedin;
-      case 'github':
-        return faGithub;
-      case 'aws cloud practitioner':
-      case 'prosci change manager':
-      case 'credly':
-        return faAward;
-      default:
-        return null;
-    }
-  };
-
-  const getImage = (iconName: string) => {
-    switch (iconName.toLowerCase()) {
       case 'github':
         return (
           <Image
@@ -85,43 +69,34 @@ export default function Links({ links, isFooter = false }: LinksProps) {
       <div
         className={
           isFooter
-            ? 'flex justify-around items-center flex-wrap gap-4 max-w-4xl mx-auto' // Match top section spacing and width
+            ? 'flex justify-center gap-12'
             : 'flex justify-around items-center flex-wrap gap-4'
         }
       >
-        {Array.isArray(links) && links.length > 0 ? (
-          links.map((link) => {
-            const icon = getIcon(link.icon);
-            const image = getImage(link.icon);
-
-            return (
-              <a
-                key={link._id}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={
-                  isFooter
-                    ? 'p-3 transition-transform hover:scale-110'
-                    : 'text-blue-600 hover:text-blue-800 transition-transform hover:scale-110 font-extralight p-2'
-                }
-                title={link.title}
-              >
-                {image ? (
-                  image
-                ) : icon ? (
-                  <FontAwesomeIcon
-                    icon={icon}
-                    size={isFooter ? '2x' : '3x'}
-                    className={isFooter ? 'hover:text-gray-300 transition-colors duration-300' : ''}
-                  />
-                ) : null}
-              </a>
-            );
-          })
-        ) : (
-          <p>No links available</p>
-        )}
+        {links.map((link) => (
+          <a
+            key={link._id}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              isFooter
+                ? 'p-3 transition-transform hover:scale-110'
+                : 'text-blue-600 hover:text-blue-800 transition-transform hover:scale-110 font-extralight p-2'
+            }
+            title={link.title}
+          >
+            {link.icon.toLowerCase() === 'linkedin' ? (
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                size={isFooter ? '2x' : '3x'}
+                className={isFooter ? 'hover:text-gray-300 transition-colors duration-300' : ''}
+              />
+            ) : (
+              getIcon(link.icon)
+            )}
+          </a>
+        ))}
       </div>
     </section>
   );

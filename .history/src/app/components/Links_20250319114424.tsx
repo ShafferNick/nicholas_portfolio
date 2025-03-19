@@ -12,13 +12,11 @@ type Link = {
 };
 
 type LinksProps = {
-  links: Link[];
+  links?: Link[];
   isFooter?: boolean;
 };
 
-export default function Links({ links, isFooter = false }: LinksProps) {
-  console.log('Links in Links component:', links); // Debug log
-
+export default function Links({ links = [], isFooter = false }: LinksProps) {
   const getIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
       case 'linkedin':
@@ -85,7 +83,7 @@ export default function Links({ links, isFooter = false }: LinksProps) {
       <div
         className={
           isFooter
-            ? 'flex justify-around items-center flex-wrap gap-4 max-w-4xl mx-auto' // Match top section spacing and width
+            ? 'flex justify-center gap-12'
             : 'flex justify-around items-center flex-wrap gap-4'
         }
       >
@@ -112,7 +110,7 @@ export default function Links({ links, isFooter = false }: LinksProps) {
                 ) : icon ? (
                   <FontAwesomeIcon
                     icon={icon}
-                    size={isFooter ? '2x' : '3x'}
+                    size={isFooter ? '3x' : '3x'}
                     className={isFooter ? 'hover:text-gray-300 transition-colors duration-300' : ''}
                   />
                 ) : null}

@@ -19,6 +19,7 @@ export default function NavbarClient() {
           <Link href="/" className="nav-link">Home</Link>
           <Link href="/about" className="nav-link">About Me</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
+          <Link href="/projects" className="nav-link">Projects</Link>
         </div>
         {/* Hamburger Menu Toggle */}
         <div className="md:hidden relative mobile-menu-toggle">

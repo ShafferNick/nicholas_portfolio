@@ -1,5 +1,5 @@
 'use client';
-import Links from './Links';
+import BadgeSocialLinks from './BadgeSocialLinks'; // Assuming this is the same as Links
 
 type Link = {
   _id: string;
@@ -9,16 +9,18 @@ type Link = {
 };
 
 type FooterClientProps = {
-  links?: Link[];
+  links: Link[];
 };
 
-export default function FooterClient({ links = [] }: FooterClientProps) {
-  console.log('Links in FooterClient:', links); // Debug log
+export default function FooterClient({ links }: FooterClientProps) {
   return (
     <footer className="bg-gray-800 text-white py-6 text-center w-full">
       <div className="flex flex-col items-center gap-4">
         <p>© 2025 Nicholas Shaffer</p>
-        <Links links={links} isFooter={true} />
+        <div className="flex justify-center gap-6">
+          {/* Badge & Social Links Section */}
+          <BadgeSocialLinks links={links} />
+        </div>
       </div>
     </footer>
   );

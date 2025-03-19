@@ -9,11 +9,10 @@ type Link = {
 };
 
 type FooterClientProps = {
-  links?: Link[];
+  links: Link[];
 };
 
-export default function FooterClient({ links = [] }: FooterClientProps) {
-  console.log('Links in FooterClient:', links); // Debug log
+export default function FooterClient({ links }: FooterClientProps) {
   return (
     <footer className="bg-gray-800 text-white py-6 text-center w-full">
       <div className="flex flex-col items-center gap-4">

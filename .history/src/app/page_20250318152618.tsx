@@ -1,10 +1,9 @@
 import { client } from '@/app/sanityClient';
 import Image from 'next/image';
 import Hero from './components/Hero';
-import Links from './components/Links';
+import BadgeSocialLinks from './components/BadgeSocialLinks';
 import ProfessionalHistory from './components/ProfessionalHistory';
 import Projects from './components/Projects';
-import FooterClient from './components/FooterClient';
 import { SanityImageSource } from '@/app/types/sanity-types';
 
 type Job = {
@@ -37,46 +36,35 @@ type Link = {
 };
 
 async function getData() {
-  try {
-    const profile = await client.fetch<Profile[]>(`*[_type == "profile"]`);
-    const jobs = await client.fetch<Job[]>(
-      `*[_type == "job"] {
-        _id,
-        title,
-        dates,
-        description,
-        location,
-        companyLogo {
-          ...,
-          asset->
-        }
-      } | order(dates.startDate desc)`
-    );
-    const projects = await client.fetch<Project[]>(
-      `*[_type == "project"] {
-        _id,
-        title,
-        timeline,
-        summary,
-        description
-      } | order(timeline.startDate desc)`
-    );
-    const links = await client.fetch<Link[]>(`*[_type == "link"]`);
-    console.log('Fetched links in getData:', links);
-    return { profile: profile[0], jobs, projects, links };
-  } catch (error) {
-    console.error('Error fetching data from Sanity:', error);
-    return { profile: { _id: '', summary: '' }, jobs: [], projects: [], links: [] };
-  }
+  const profile = await client.fetch<Profile[]>(`*[_type == "profile"]`);
+  const jobs = await client.fetch<Job[]>(
+    `*[_type == "job"] {
+      _id,
+      title,
+      dates,
+      description,
+      location,
+      companyLogo {
+        ...,
+        asset->
+      }
+    } | order(dates.startDate desc)`
+  );
+  const projects = await client.fetch<Project[]>(
+    `*[_type == "project"] {
+      _id,
+      title,
+      timeline,
+      summary,
+      description
+    } | order(timeline.startDate desc)`
+  );
+  const links = await client.fetch<Link[]>(`*[_type == "link"]`);
+  return { profile: profile[0], jobs, projects, links };
 }
 
 export default async function Home() {
-  const data = await getData();
-  const { profile, jobs, projects, links } = data;
-
-  console.log('Links in Home (before rendering):', links);
-
-  const safeLinks = Array.isArray(links) ? links : [];
+  const { profile, jobs, projects, links } = await getData();
 
   return (
     <>
@@ -84,7 +72,7 @@ export default async function Home() {
       <Hero summary={profile.summary} />
 
       {/* Badge & Social Links Section */}
-      <Links links={safeLinks} />
+      <BadgeSocialLinks links={links} />
 
       <section className="contact-section">
         <div className="max-w-4xl mx-auto">
@@ -106,9 +94,6 @@ export default async function Home() {
 
       {/* Projects Section */}
       <Projects projects={projects} />
-
-      {/* Footer Section */}
-      <FooterClient links={safeLinks} />
     </>
   );
 }

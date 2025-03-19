@@ -113,16 +113,4 @@ export default function Links({ links, isFooter = false }: LinksProps) {
                   <FontAwesomeIcon
                     icon={icon}
                     size={isFooter ? '2x' : '3x'}
-                    className={isFooter ? 'hover:text-gray-300 transition-colors duration-300' : ''}
-                  />
-                ) : null}
-              </a>
-            );
-          })
-        ) : (
-          <p>No links available</p>
-        )}
-      </div>
-    </section>
-  );
-}
+                    className={isFooter ? 'hover

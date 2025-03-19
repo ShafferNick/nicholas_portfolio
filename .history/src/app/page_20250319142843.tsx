@@ -1,5 +1,5 @@
 import { client } from '@/app/sanityClient';
-import { SanityImageSource } from '@/app/types/sanity-types';
+import { SanityImageSource } from '@/types/sanity-types';
 import ContactWrapper from './components/ContactWrapper';
 
 type Job = {
@@ -43,8 +43,6 @@ type EducationEntry = {
 async function getData() {
   try {
     const profile = await client.fetch<Profile[]>(`*[_type == "profile"]`);
-    console.log('Fetched profile:', profile);
-
     const jobs = await client.fetch<Job[]>(
       `*[_type == "job"] {
         _id,
@@ -58,8 +56,6 @@ async function getData() {
         }
       } | order(dates.startDate desc)`
     );
-    console.log('Fetched jobs:', jobs);
-
     const projects = await client.fetch<Project[]>(
       `*[_type == "project"] {
         _id,
@@ -69,11 +65,7 @@ async function getData() {
         description
       } | order(timeline.startDate desc)`
     );
-    console.log('Fetched projects:', projects);
-
     const links = await client.fetch<Link[]>(`*[_type == "link"]`);
-    console.log('Fetched links:', links);
-
     const education = await client.fetch<EducationEntry[]>(
       `*[_type == "education"] {
         _id,
@@ -84,14 +76,11 @@ async function getData() {
         dates
       } | order(dates.startDate desc)`
     );
-    console.log('Fetched education:', education);
-
-    // Check if profile[0] exists before accessing summary
-    if (!profile || profile.length === 0) {
-      console.error('No profile data found');
-      return { profile: { _id: '', summary: '' }, jobs, projects, links, education };
-    }
-
+    console.log('Fetched profile in getData:', profile);
+    console.log('Fetched jobs in getData:', jobs);
+    console.log('Fetched projects in getData:', projects);
+    console.log('Fetched links in getData:', links);
+    console.log('Fetched education in getData:', education);
     return { profile: profile[0], jobs, projects, links, education };
   } catch (error) {
     console.error('Error fetching data from Sanity:', error);
@@ -113,7 +102,7 @@ export default async function Home() {
 
   return (
     <ContactWrapper
-      profileSummary={profile?.summary || 'No summary available'}
+      profileSummary={profile.summary}
       links={safeLinks}
       jobs={jobs || []}
       projects={projects || []}

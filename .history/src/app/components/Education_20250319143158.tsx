@@ -11,14 +11,14 @@ type EducationEntry = {
 };
 
 type EducationProps = {
-  education: EducationEntry[] | undefined;
+  education: EducationEntry[] | undefined; // Allow undefined
 };
 
 export default function Education({ education = [] }: EducationProps) {
   return (
-    <section className="education-section py-8 bg-[#EFF0F3] text-black animate-slide-in w-full">
+    <section className="education-section py-16 bg-[#EFF0F3] text-black animate-slide-in w-full">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-left mb-12">Education</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Education</h2>
         <div className="bg-white shadow-lg rounded-lg p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {Array.isArray(education) && education.length > 0 ? (
@@ -29,7 +29,7 @@ export default function Education({ education = [] }: EducationProps) {
                     {entry.major} | {entry.dates.startDate} - {entry.dates.endDate || 'Present'}
                   </p>
                   <p className="text-sm mb-2">GPA: {entry.gpa}</p>
-                  <ul className="list-disc list-inside text-sm space-y-1">
+                  <ul className="list-disc list-inside text-sm space-y-2">
                     {entry.activities.map((activity, index) => (
                       <li key={index} className="leading-relaxed">
                         {activity}

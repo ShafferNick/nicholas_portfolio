@@ -1,5 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import ContactWrapper from './components/ContactWrapper';
+import FooterClient from './components/FooterClient';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ContactWrapper>
+          {children}
+          <FooterClient links={[]} />
+        </ContactWrapper>
+      </body>
     </html>
   );
 }

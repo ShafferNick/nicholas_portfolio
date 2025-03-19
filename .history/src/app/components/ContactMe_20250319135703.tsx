@@ -1,0 +1,42 @@
+'use client';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Contact from './components/Contact';
+
+export default function ContactMe({ onContactClick }: { onContactClick: () => void }) {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const openForm = () => {
+    setIsFormOpen(true);
+    onContactClick();
+  };
+
+  const closeForm = () => setIsFormOpen(false);
+
+  return (
+    <>
+      <section className="contact-section">
+        <div className="max-w-4xl mx-auto">
+          <div className="contact-me cursor-pointer" onClick={openForm}>
+            <span>Contact Me</span>
+            <Image
+              src="/paper-plane-svgrepo-com.svg"
+              alt="Contact Icon"
+              width={24}
+              height={24}
+              className="contact-icon"
+            />
+          </div>
+        </div>
+      </section>
+
+      {isFormOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-4">
+            <Contact onClose={closeForm} />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

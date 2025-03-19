@@ -41,7 +41,7 @@ export default function ProfessionalHistory({ jobs = [] }: ProfessionalHistoryPr
   };
 
   return (
-    <section className="professional-history-section py-8 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">
+    <section className="professional-history-section py-16 bg-[#EFF0F3] animate-slide-in w-full professional-history-spacing">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-5xl md:text-6xl font-bold text-left mb-2">Professional History</h2>
         <p className="text-sm italic mb-6">Below is a summary of my full work history, inclusive of all my work experience.</p>
@@ -49,7 +49,7 @@ export default function ProfessionalHistory({ jobs = [] }: ProfessionalHistoryPr
           {Array.isArray(jobs) && jobs.length > 0 ? (
             jobs.map((job) => (
               <div key={job._id} className="px-2">
-                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[400px] transition-transform duration-300 hover:shadow-xl">
+                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col min-h-[500px] transition-transform duration-300 hover:shadow-xl">
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold mb-2">{job.title}</h3>
                     <p className="mb-4 text-sm italic">

@@ -11,7 +11,7 @@ body {
   background: #1A1A1A;
   color: #FFFFFF;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -37,7 +37,8 @@ a {
 /* Hero Section */
 .hero-custom-black {
   background-color: #1A1A1A;
-  padding-top: 5rem; /* Increased to 5rem (80px) to ensure it clears the navbar */
+  padding-top: 4rem;
+  /* Push the Hero section down to avoid navbar overlap (navbar height ~4rem) */
 }
 
 .animate-slide-in {
@@ -49,6 +50,7 @@ a {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -165,6 +167,7 @@ main div.contact-me {
 }
 
 @media (min-width: 768px) {
+
   main h1,
   main h2,
   main h3,
@@ -178,14 +181,16 @@ main div.contact-me {
   }
 }
 
-/* Header Spacing for All Sections with Higher Specificity */
-section.hero-custom-black h2,
-section.badge-social-section h2,
-section.professional-history-section h2,
-section.projects-section h2,
-section.education-section h2 {
-  margin-top: 1.5rem !important; /* 24px */
-  margin-bottom: 1.5rem !important; /* 24px */
+/* Header Spacing for All Sections */
+.hero-custom-black h2,
+.badge-social-section h2,
+.professional-history-section h2,
+.projects-section h2,
+.education-section h2 {
+  margin-top: 1.5rem !important;
+  /* 24px */
+  margin-bottom: 1.5rem !important;
+  /* 24px */
 }
 
 /* Professional History Section */
@@ -203,14 +208,6 @@ section.education-section h2 {
 /* Ensure job title is bold */
 .professional-history-section h3 {
   font-weight: 700 !important;
-}
-
-.professional-history-section .bg-white h3 {
-  margin-bottom: 0.5rem !important;
-}
-
-.professional-history-section .bg-white p.italic {
-  margin-bottom: 1rem !important;
 }
 
 /* Style react-slick arrows and dots */
@@ -450,7 +447,7 @@ footer a:hover {
   transform: scale(1.1);
 }
 
-footer .flex.justify-around > a {
+footer .flex.justify-around>a {
   flex: 0 0 auto;
 }
 

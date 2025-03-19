@@ -35,15 +35,14 @@ export default function Projects({ projects = [] }: ProjectsProps) {
   };
 
   return (
-    <section className="projects-section py-8 bg-[#EFF0F3] text-black animate-slide-in w-full">
+    <section className="projects-section py-16 bg-[#EFF0F3] text-black animate-slide-in w-full">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-left mb-12">Hi-lighted Professional Projects</h2>
-        <p className="text-sm italic mb-6">Below are some key metrics from some of my large professional work projects. I've showcased these without revealing proprietary company information to demonstrate my experience in various industry areas.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
         <Slider {...settings}>
           {Array.isArray(projects) && projects.length > 0 ? (
             projects.map((project) => (
               <div key={project._id} className="px-2">
-                <div className="bg-gray-200 shadow-lg rounded-lg p-6 flex flex-col min-h-[350px] transition-transform duration-300 hover:shadow-xl">
+                <div className="bg-gray-200 shadow-lg rounded-lg p-6 flex flex-col min-h-[400px] transition-transform duration-300 hover:shadow-xl">
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-medium mb-2">{project.title}</h3>
                     <p className="mb-2 text-sm italic">

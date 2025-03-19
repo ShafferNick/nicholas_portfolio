@@ -22,12 +22,6 @@ export default function NavbarClient({ onContactClick }: NavbarClientProps) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    console.log('Contact link clicked in navbar');
-    e.preventDefault();
-    onContactClick();
-  };
-
   return (
     <nav className="bg-[#1A1A1A] text-white p-4 fixed w-full top-0 z-50">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
@@ -38,7 +32,12 @@ export default function NavbarClient({ onContactClick }: NavbarClientProps) {
               key={link.name}
               href={link.href}
               className={`nav-link ${pathname === link.href ? 'active-link' : ''}`}
-              onClick={link.name === 'Contact' ? handleContactClick : undefined}
+              onClick={(e) => {
+                if (link.onClick) {
+                  e.preventDefault();
+                  link.onClick();
+                }
+              }}
             >
               {link.name}
             </Link>
@@ -74,10 +73,9 @@ export default function NavbarClient({ onContactClick }: NavbarClientProps) {
                 href={link.href}
                 className={`text-white text-lg ${pathname === link.href ? 'active-link' : ''}`}
                 onClick={(e) => {
-                  if (link.name === 'Contact') {
+                  if (link.onClick) {
                     e.preventDefault();
-                    console.log('Contact link clicked in mobile menu');
-                    onContactClick();
+                    link.onClick();
                     toggleMobileMenu();
                   } else {
                     toggleMobileMenu();

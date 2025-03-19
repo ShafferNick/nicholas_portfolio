@@ -1,6 +1,13 @@
 import { client } from '@/app/sanityClient';
+import Image from 'next/image';
+import Hero from './components/Hero';
+import Links from './components/Links';
+import ProfessionalHistory from './components/ProfessionalHistory';
+import Projects from './components/Projects';
+import Education from './components/Education';
+import ContactMe from './components/ContactMe';
+import FooterClient from './components/FooterClient';
 import { SanityImageSource } from '@/app/types/sanity-types';
-import ContactWrapper from './components/ContactWrapper';
 
 type Job = {
   _id: string;
@@ -43,8 +50,6 @@ type EducationEntry = {
 async function getData() {
   try {
     const profile = await client.fetch<Profile[]>(`*[_type == "profile"]`);
-    console.log('Fetched profile:', profile);
-
     const jobs = await client.fetch<Job[]>(
       `*[_type == "job"] {
         _id,
@@ -58,8 +63,6 @@ async function getData() {
         }
       } | order(dates.startDate desc)`
     );
-    console.log('Fetched jobs:', jobs);
-
     const projects = await client.fetch<Project[]>(
       `*[_type == "project"] {
         _id,
@@ -69,11 +72,7 @@ async function getData() {
         description
       } | order(timeline.startDate desc)`
     );
-    console.log('Fetched projects:', projects);
-
     const links = await client.fetch<Link[]>(`*[_type == "link"]`);
-    console.log('Fetched links:', links);
-
     const education = await client.fetch<EducationEntry[]>(
       `*[_type == "education"] {
         _id,
@@ -84,14 +83,8 @@ async function getData() {
         dates
       } | order(dates.startDate desc)`
     );
-    console.log('Fetched education:', education);
-
-    // Check if profile[0] exists before accessing summary
-    if (!profile || profile.length === 0) {
-      console.error('No profile data found');
-      return { profile: { _id: '', summary: '' }, jobs, projects, links, education };
-    }
-
+    console.log('Fetched links in getData:', links);
+    console.log('Fetched education in getData:', education);
     return { profile: profile[0], jobs, projects, links, education };
   } catch (error) {
     console.error('Error fetching data from Sanity:', error);
@@ -103,21 +96,33 @@ export default async function Home() {
   const data = await getData();
   const { profile, jobs, projects, links, education } = data;
 
-  console.log('Profile in Home:', profile);
-  console.log('Jobs in Home:', jobs);
-  console.log('Projects in Home:', projects);
-  console.log('Links in Home:', links);
-  console.log('Education in Home:', education);
+  console.log('Links in Home (before rendering):', links);
+  console.log('Education in Home (before rendering):', education);
 
   const safeLinks = Array.isArray(links) ? links : [];
 
   return (
-    <ContactWrapper
-      profileSummary={profile?.summary || 'No summary available'}
-      links={safeLinks}
-      jobs={jobs || []}
-      projects={projects || []}
-      education={education || []}
-    />
+    <>
+      {/* Hero Section */}
+      <Hero summary={profile.summary} />
+
+      {/* Badge & Social Links Section */}
+      <Links links={safeLinks} />
+
+      {/* Contact Me Section */}
+      <ContactMe onContactClick={() => {}} />
+
+      {/* Professional History Section */}
+      <ProfessionalHistory jobs={jobs} />
+
+      {/* Projects Section */}
+      <Projects projects={projects} />
+
+      {/* Education Section */}
+      <Education education={education} />
+
+      {/* Footer Section */}
+      <FooterClient links={safeLinks} />
+    </>
   );
 }

@@ -12,33 +12,27 @@ export default function NavbarClient({ onContactClick }: NavbarClientProps) {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: 'Resume', href: '/' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Entrepreneurship', href: '/entrepreneurship' },
-    { name: 'Contact', href: '#', onClick: onContactClick },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Contact', href: '/Contact'}
   ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    console.log('Contact link clicked in navbar');
-    e.preventDefault();
-    onContactClick();
-  };
-
   return (
     <nav className="bg-[#1A1A1A] text-white p-4 fixed w-full top-0 z-50">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
-        {/* Removed the name from the navbar */}
+
+        {/* Desktop Menu */}
         <div className="desktop-menu hidden md:flex space-x-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               className={`nav-link ${pathname === link.href ? 'active-link' : ''}`}
-              onClick={link.name === 'Contact' ? handleContactClick : undefined}
             >
               {link.name}
             </Link>
@@ -73,16 +67,7 @@ export default function NavbarClient({ onContactClick }: NavbarClientProps) {
                 key={link.name}
                 href={link.href}
                 className={`text-white text-lg ${pathname === link.href ? 'active-link' : ''}`}
-                onClick={(e) => {
-                  if (link.name === 'Contact') {
-                    e.preventDefault();
-                    console.log('Contact link clicked in mobile menu');
-                    onContactClick();
-                    toggleMobileMenu();
-                  } else {
-                    toggleMobileMenu();
-                  }
-                }}
+                onClick={() => toggleMobileMenu()}
               >
                 {link.name}
               </Link>

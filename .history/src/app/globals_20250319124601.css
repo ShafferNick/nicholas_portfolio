@@ -454,18 +454,10 @@ footer a:hover {
   /* Matches hover:scale-110 */
 }
 
-/*
 footer svg,
 footer img {
   width: 40px;
-
+  /* Matches the smaller size in the footer */
   height: 40px;
 }
-*/
 
-
-/* Ensure the footer links are centered and spaced like the top section */
-footer .flex.justify-around>a {
-  flex: 0 0 auto;
-  /* Prevent flex items from growing/shrinking */
-}
